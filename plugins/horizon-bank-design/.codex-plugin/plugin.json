@@ -1,0 +1,39 @@
+{
+  "name": "horizon-bank-design",
+  "version": "1.0.0+codex.20260727175910",
+  "description": "Design, build, and audit accessible Horizon Bank digital experiences with reusable identity assets, tokens, components, stock imagery, and financial UX guidance.",
+  "author": {
+    "name": "Horizon design enablement"
+  },
+  "keywords": [
+    "horizon-bank",
+    "design-system",
+    "banking",
+    "ui",
+    "ux",
+    "accessibility",
+    "frontend"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Horizon Bank Design",
+    "shortDescription": "Build and audit Horizon Bank digital UI.",
+    "longDescription": "Create accessible Horizon Bank web and mobile concepts using the HB identity, Horizon semantic tokens, reusable financial patterns, an SVG icon library, and curated stock photography.",
+    "developerName": "Horizon design enablement",
+    "category": "Design",
+    "capabilities": [
+      "Design",
+      "Write",
+      "Review"
+    ],
+    "defaultPrompt": [
+      "Design a modern Horizon Bank experience.",
+      "Audit this UI against Horizon design guidance.",
+      "Apply Horizon tokens and accessible components."
+    ],
+    "brandColor": "#D71E28",
+    "composerIcon": "./assets/horizon-bank-icon.svg",
+    "logo": "./assets/horizon-bank-icon.svg",
+    "logoDark": "./assets/horizon-bank-icon.svg"
+  }
+}

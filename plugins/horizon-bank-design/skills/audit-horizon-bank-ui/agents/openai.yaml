@@ -1,0 +1,7 @@
+interface:
+  display_name: "Audit Horizon Bank UI"
+  short_description: "Review Horizon banking UI and prototypes"
+  default_prompt: "Use $audit-horizon-bank-ui to audit this Horizon Bank experience."
+  icon_small: "./assets/horizon-bank-icon.svg"
+  icon_large: "./assets/horizon-bank-icon.svg"
+  brand_color: "#D71E28"
