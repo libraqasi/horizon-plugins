@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "dataset": {
+    "name": "horizon-all-archetypes-small",
+    "seed": 4242,
+    "scenario_date": "2026-07-27",
+    "time_mode": "fixed",
+    "timezone": "America/New_York",
+    "locale": "en-US",
+    "currency": "USD"
+  },
+  "scale": {
+    "preset": "small",
+    "customers": 9,
+    "history_days": 90
+  },
+  "archetypes": {
+    "include": [
+      "youth-guardian",
+      "emerging-adult",
+      "everyday-banking",
+      "family-homebuyer",
+      "affluent-investor",
+      "small-business-owner",
+      "gig-multi-income",
+      "retiree-fixed-income",
+      "agentic-digital-wallet"
+    ]
+  },
+  "modules": [
+    "households",
+    "businesses",
+    "accounts",
+    "cards",
+    "transactions",
+    "incomes",
+    "loans",
+    "investments",
+    "budgets",
+    "goals",
+    "rewards",
+    "alerts",
+    "service_interactions",
+    "devices",
+    "disputes",
+    "delegations"
+  ],
+  "overlays": [
+    "payday",
+    "low-balance",
+    "overdraft-risk",
+    "pending-card-charge",
+    "card-dispute",
+    "fraud-review",
+    "missed-payment",
+    "travel",
+    "move-home",
+    "job-change",
+    "healthcare-expense",
+    "new-dependent"
+  ],
+  "outputs": {
+    "formats": ["bundle-json", "jsonl", "csv", "sqlite", "mongo"]
+  },
+  "narrative": {
+    "mode": "template"
+  }
+}

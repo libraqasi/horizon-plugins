@@ -1,0 +1,67 @@
+{
+  "color": {
+    "brand": {
+      "primary": "#D71E28",
+      "primaryHover": "#B01B24",
+      "rule": "#FFCD41"
+    },
+    "surface": {
+      "page": "#FFFFFF",
+      "warm": "#F4F0ED",
+      "quiet": "#F9F7F6",
+      "inverse": "#141414"
+    },
+    "text": {
+      "primary": "#141414",
+      "muted": "#675F5F",
+      "inverse": "#FFFFFF"
+    },
+    "border": {
+      "subtle": "#E2DEDE",
+      "control": "#787070"
+    },
+    "action": {
+      "link": "#5A469B"
+    },
+    "status": {
+      "positive": "#178757",
+      "warning": "#A93E00",
+      "fault": "#87190A"
+    },
+    "data": {
+      "orange": "#EB691E",
+      "coral": "#D73F26",
+      "pink": "#C83255",
+      "purple": "#AA1E87",
+      "violet": "#823291",
+      "indigo": "#5A469B"
+    }
+  },
+  "font": {
+    "sans": "\"Horizon Sans\", Arial, Helvetica, sans-serif",
+    "display": "\"Horizon Sans Display\", \"Horizon Sans\", Arial, Helvetica, sans-serif",
+    "wordmark": "Superclarendon, Rockwell, Georgia, serif",
+    "mono": "\"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+  },
+  "space": {
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "5": "1.5rem",
+    "6": "2rem",
+    "7": "3rem"
+  },
+  "radius": {
+    "control": "0.4rem",
+    "card": "0.75rem",
+    "pill": "999px"
+  },
+  "shadow": {
+    "raised": "0 8px 24px rgb(20 20 20 / 0.08)"
+  },
+  "motion": {
+    "fast": "140ms",
+    "standard": "220ms"
+  }
+}

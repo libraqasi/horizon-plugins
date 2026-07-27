@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "dataset": {"name": "horizon-agentic-digital-wallet", "seed": 1909, "scenario_date": "2026-07-27", "time_mode": "fixed", "timezone": "America/New_York", "locale": "en-US", "currency": "USD"},
+  "scale": {"preset": "custom", "customers": 1, "history_days": 120},
+  "archetypes": {"include": ["agentic-digital-wallet"]},
+  "modules": ["accounts", "cards", "transactions", "incomes", "budgets", "goals", "rewards", "alerts", "service_interactions", "devices", "delegations"],
+  "overlays": ["pending-card-charge", "card-dispute", "travel"],
+  "outputs": {"formats": ["bundle-json", "jsonl", "csv", "sqlite", "mongo"]},
+  "narrative": {"mode": "template"}
+}

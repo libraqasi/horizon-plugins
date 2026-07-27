@@ -1,0 +1,7 @@
+interface:
+  display_name: "Generate Horizon Bank Assets"
+  short_description: "Create aligned Horizon imagery and icons"
+  default_prompt: "Use $generate-horizon-bank-assets to create a Horizon-aligned hero image or icon."
+  icon_small: "./assets/horizon-bank-icon.svg"
+  icon_large: "./assets/horizon-bank-icon.svg"
+  brand_color: "#D71E28"

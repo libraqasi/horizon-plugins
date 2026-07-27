@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "dataset": {"name": "horizon-retiree-fixed-income", "seed": 1808, "scenario_date": "2026-07-27", "time_mode": "fixed", "timezone": "America/New_York", "locale": "en-US", "currency": "USD"},
+  "scale": {"preset": "custom", "customers": 1, "history_days": 365},
+  "archetypes": {"include": ["retiree-fixed-income"]},
+  "modules": ["households", "accounts", "cards", "transactions", "incomes", "investments", "budgets", "goals", "rewards", "alerts", "service_interactions", "devices", "delegations"],
+  "overlays": ["healthcare-expense", "fraud-review"],
+  "outputs": {"formats": ["bundle-json", "jsonl", "csv", "sqlite", "mongo"]},
+  "narrative": {"mode": "template"}
+}

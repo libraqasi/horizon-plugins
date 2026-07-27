@@ -1,0 +1,7 @@
+interface:
+  display_name: "Plan Horizon Synthetic Data"
+  short_description: "Define coherent banking data requirements"
+  default_prompt: "Use $plan-horizon-bank-synthetic-data to plan synthetic data for this Horizon Bank prototype."
+  icon_small: "./assets/horizon-bank-icon.svg"
+  icon_large: "./assets/horizon-bank-icon.svg"
+  brand_color: "#D71E28"

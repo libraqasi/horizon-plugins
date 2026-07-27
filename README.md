@@ -11,7 +11,8 @@ source.
 .
 ├── .agents/plugins/marketplace.json
 ├── plugins/
-│   └── horizon-bank-design/
+│   ├── horizon-bank-design/
+│   └── horizon-bank-synthetic-data-generator/
 ├── scripts/marketplace/
 ├── pdf/
 └── presentation/
@@ -26,6 +27,7 @@ as `./plugins/<plugin-name>`.
 ```bash
 codex plugin marketplace add "/absolute/path/to/Horizon Bank Plugins"
 codex plugin add horizon-bank-design@horizon-bank
+codex plugin add horizon-bank-synthetic-data-generator@horizon-bank
 ```
 
 Start a new Codex task after installing or updating a plugin so the refreshed
@@ -56,6 +58,11 @@ the layout above when publishing.
 python3 scripts/marketplace/validate_marketplace.py
 python3 plugins/horizon-bank-design/skills/build-horizon-bank-ui/scripts/audit_horizon_ui.py \
   --strict plugins/horizon-bank-design/skills/build-horizon-bank-ui/assets/starter
+python3 plugins/horizon-bank-synthetic-data-generator/skills/generate-horizon-bank-synthetic-data/scripts/generate_horizon_data.py \
+  --config plugins/horizon-bank-synthetic-data-generator/skills/generate-horizon-bank-synthetic-data/assets/configs/all-archetypes-small.json \
+  --out /tmp/horizon-synthetic-data
+python3 plugins/horizon-bank-synthetic-data-generator/skills/validate-horizon-bank-synthetic-data/scripts/validate_horizon_data.py \
+  /tmp/horizon-synthetic-data --strict --reproducibility-check
 ```
 
 The Codex plugin and skill validators should also pass before publishing.

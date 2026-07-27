@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Generate Horizon Bank synthetic data</title>
+  <desc id="desc">HB monogram in a red square with a yellow rule</desc>
+  <rect x="4" y="4" width="120" height="120" rx="12" fill="#D71E28"/>
+  <path fill="#FFFFFF" d="M18 29h11v26h20V29h11v70H49V68H29v31H18V29Z"/>
+  <path fill="#FFFFFF" d="M68 29h20c15 0 24 7 24 19 0 8-4 14-11 17 9 3 14 9 14 17 0 12-9 17-26 17H68V29Zm12 11v20h8c8 0 12-3 12-10 0-6-4-10-12-10h-8Zm0 31v17h10c8 0 12-3 12-9 0-5-4-8-12-8H80Z"/>
+  <rect x="16" y="110" width="96" height="4" rx="2" fill="#FFCD41"/>
+</svg>

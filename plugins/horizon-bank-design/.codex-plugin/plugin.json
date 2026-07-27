@@ -1,7 +1,7 @@
 {
   "name": "horizon-bank-design",
-  "version": "1.0.0+codex.20260727175910",
-  "description": "Design, build, and audit accessible Horizon Bank digital experiences with reusable identity assets, tokens, components, stock imagery, and financial UX guidance.",
+  "version": "1.0.0+codex.20260727200947",
+  "description": "Generate visual mockups and aligned assets, design, build, and audit accessible Horizon Bank digital experiences with reusable identity, tokens, components, photography, iconography, and financial UX guidance.",
   "author": {
     "name": "Horizon design enablement"
   },
@@ -12,24 +12,30 @@
     "ui",
     "ux",
     "accessibility",
-    "frontend"
+    "frontend",
+    "mockups",
+    "prototyping",
+    "image-generation",
+    "photography",
+    "icons"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Horizon Bank Design",
-    "shortDescription": "Build and audit Horizon Bank digital UI.",
-    "longDescription": "Create accessible Horizon Bank web and mobile concepts using the HB identity, Horizon semantic tokens, reusable financial patterns, an SVG icon library, and curated stock photography.",
+    "shortDescription": "Generate, build, and audit Horizon Bank design.",
+    "longDescription": "Create visual mockups, aligned imagery and icons, and accessible Horizon Bank web and mobile concepts using the HB identity, semantic tokens, reusable financial patterns, editorial photography, and a production SVG icon system.",
     "developerName": "Horizon design enablement",
     "category": "Design",
     "capabilities": [
       "Design",
       "Write",
-      "Review"
+      "Review",
+      "Image"
     ],
     "defaultPrompt": [
       "Design a modern Horizon Bank experience.",
-      "Audit this UI against Horizon design guidance.",
-      "Apply Horizon tokens and accessible components."
+      "Generate a Horizon Bank mockup, hero image, or icon.",
+      "Audit this UI against Horizon design guidance."
     ],
     "brandColor": "#D71E28",
     "composerIcon": "./assets/horizon-bank-icon.svg",

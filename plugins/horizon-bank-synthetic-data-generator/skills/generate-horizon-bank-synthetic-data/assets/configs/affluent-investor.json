@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "dataset": {"name": "horizon-affluent-investor", "seed": 1505, "scenario_date": "2026-07-27", "time_mode": "fixed", "timezone": "America/New_York", "locale": "en-US", "currency": "USD"},
+  "scale": {"preset": "custom", "customers": 1, "history_days": 365},
+  "archetypes": {"include": ["affluent-investor"]},
+  "modules": ["households", "accounts", "cards", "transactions", "incomes", "loans", "investments", "budgets", "goals", "rewards", "alerts", "service_interactions", "devices"],
+  "overlays": ["travel", "fraud-review"],
+  "outputs": {"formats": ["bundle-json", "jsonl", "csv", "sqlite", "mongo"]},
+  "narrative": {"mode": "template"}
+}

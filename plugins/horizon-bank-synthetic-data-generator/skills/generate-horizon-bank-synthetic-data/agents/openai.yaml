@@ -1,0 +1,7 @@
+interface:
+  display_name: "Generate Horizon Synthetic Data"
+  short_description: "Create seeded Horizon banking datasets"
+  default_prompt: "Use $generate-horizon-bank-synthetic-data to generate a coherent Horizon Bank dataset."
+  icon_small: "./assets/horizon-bank-icon.svg"
+  icon_large: "./assets/horizon-bank-icon.svg"
+  brand_color: "#D71E28"

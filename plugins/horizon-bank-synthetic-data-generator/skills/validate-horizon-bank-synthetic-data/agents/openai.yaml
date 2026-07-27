@@ -1,0 +1,7 @@
+interface:
+  display_name: "Validate Horizon Synthetic Data"
+  short_description: "Audit synthetic banking data quality"
+  default_prompt: "Use $validate-horizon-bank-synthetic-data to validate this Horizon Bank dataset."
+  icon_small: "./assets/horizon-bank-icon.svg"
+  icon_large: "./assets/horizon-bank-icon.svg"
+  brand_color: "#D71E28"

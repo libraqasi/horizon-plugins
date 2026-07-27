@@ -1,0 +1,7 @@
+interface:
+  display_name: "Generate Horizon Bank Mockups"
+  short_description: "Create visual Horizon banking prototypes"
+  icon_small: "./assets/icons/icon-ui-devices.svg"
+  icon_large: "./assets/icons/icon-ui-devices.svg"
+  brand_color: "#D71E28"
+  default_prompt: "Use $generate-horizon-bank-mockups to create a high-fidelity Horizon Bank mockup for this idea."

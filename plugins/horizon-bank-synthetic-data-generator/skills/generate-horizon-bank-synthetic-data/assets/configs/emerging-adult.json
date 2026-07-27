@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "dataset": {"name": "horizon-emerging-adult", "seed": 1202, "scenario_date": "2026-07-27", "time_mode": "fixed", "timezone": "America/New_York", "locale": "en-US", "currency": "USD"},
+  "scale": {"preset": "custom", "customers": 1, "history_days": 120},
+  "archetypes": {"include": ["emerging-adult"]},
+  "modules": ["accounts", "cards", "transactions", "incomes", "loans", "budgets", "goals", "rewards", "alerts", "devices"],
+  "overlays": ["low-balance", "pending-card-charge"],
+  "outputs": {"formats": ["bundle-json", "jsonl", "csv", "sqlite", "mongo"]},
+  "narrative": {"mode": "template"}
+}

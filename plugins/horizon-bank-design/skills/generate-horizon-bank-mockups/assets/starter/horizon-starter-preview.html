@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A complete preview of the Horizon Bank visual language, components, banking patterns, and agent authorization experiences.">
+    <title>Horizon Bank design system preview</title>
+    <link rel="stylesheet" href="./horizon-tokens.css">
+  </head>
+  <body>
+    <a class="horizon-skip-link" href="#main">Skip to content</a>
+
+    <header class="horizon-header">
+      <a class="horizon-brand" href="#overview" aria-label="Horizon Bank design system home">
+        <img src="../logos/horizon-bank-wordmark-white.svg" alt="">
+      </a>
+      <p class="horizon-header-note">Design system · Component preview</p>
+    </header>
+    <div class="horizon-brand-rule"></div>
+
+    <nav class="horizon-nav" aria-label="Design system sections">
+      <ul>
+        <li><a href="#identity">Identity</a></li>
+        <li><a href="#foundations">Foundations</a></li>
+        <li><a href="#navigation">Navigation</a></li>
+        <li><a href="#controls">Controls</a></li>
+        <li><a href="#forms">Forms</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+        <li><a href="#banking">Banking</a></li>
+        <li><a href="#agent-commerce">Agent commerce</a></li>
+        <li><a href="#data">Data</a></li>
+        <li><a href="#states">States</a></li>
+        <li><a href="#imagery">Imagery</a></li>
+      </ul>
+    </nav>
+
+    <main class="horizon-main" id="main">
+      <section class="horizon-section horizon-hero" id="overview">
+        <div class="horizon-hero-inner">
+          <p class="horizon-eyebrow">Horizon Bank design system</p>
+          <h1>Clear money moments. Confident decisions.</h1>
+          <p>A practical visual language for everyday banking, cards, saving, lending, service, and emerging payment experiences.</p>
+          <div class="horizon-hero-meta" aria-label="Design system qualities">
+            <span class="horizon-hero-chip">Accessible by default</span>
+            <span class="horizon-hero-chip">Responsive patterns</span>
+            <span class="horizon-hero-chip">Deterministic trust surfaces</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="horizon-section horizon-section-plain" id="identity">
+        <div class="horizon-section-heading">
+          <p class="horizon-eyebrow">01 · Identity</p>
+          <h2>A familiar, confident signature</h2>
+          <p>The formal wordmark and compact HB icon are independent assets. Pair them only when the product surface genuinely needs both.</p>
+        </div>
+
+        <div class="horizon-identity-grid">
+          <figure class="horizon-identity-asset">
+            <div class="horizon-identity-swatch">
+              <img class="horizon-identity-wordmark" src="../logos/horizon-bank-wordmark-black.svg" alt="Horizon Bank">
+            </div>
+            <figcaption>Black wordmark · light surfaces</figcaption>
+          </figure>
+          <figure class="horizon-identity-asset">
+            <div class="horizon-identity-swatch horizon-identity-swatch-inverse">
+              <img class="horizon-identity-wordmark" src="../logos/horizon-bank-wordmark-white.svg" alt="Horizon Bank">
+            </div>
+            <figcaption>White wordmark · red or dark surfaces</figcaption>
+          </figure>
+          <figure class="horizon-identity-asset">
+            <div class="horizon-identity-swatch">
+              <img class="horizon-identity-icon" src="../logos/horizon-bank-icon.svg" alt="HB">
+            </div>
+            <figcaption>Independent HB icon · compact product surfaces</figcaption>
+          </figure>
+          <figure class="horizon-identity-asset">
+            <div class="horizon-identity-swatch">
+              <p class="horizon-brand-name">Horizon Bank</p>
+            </div>
+            <figcaption>Typeset bank name · flexible editorial layouts</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="horizon-section horizon-section-warm" id="foundations">
+        <div class="horizon-section-heading">
+          <p class="horizon-eyebrow">02 · Foundations</p>
+          <h2>Color, type, space, and iconography</h2>
+          <p>Warm neutrals support the primary red and yellow identity. Indigo is reserved for links, while status colors always appear with text or icon reinforcement.</p>
+        </div>
+
+        <div class="horizon-grid horizon-grid-3" aria-label="Core color palette">
+          <div class="horizon-swatch horizon-swatch-red">
+            <strong>Horizon red</strong>
+            <code>#D71E28</code>
+          </div>
+          <div class="horizon-swatch horizon-swatch-yellow">
+            <strong>Brand rule</strong>
+            <code>#FFCD41</code>
+          </div>
+          <div class="horizon-swatch horizon-swatch-warm">
+            <strong>Warm canvas</strong>
+            <code>#F4F0ED</code>
+          </div>
+          <div class="horizon-swatch horizon-swatch-ink">
+            <strong>Primary ink</strong>
+            <code>#141414</code>
+          </div>
+          <div class="horizon-swatch horizon-swatch-indigo">
+            <strong>Action indigo</strong>
+            <code>#5A469B</code>
+          </div>
+          <div class="horizon-swatch horizon-swatch-green">
+            <strong>Positive green</strong>
+            <code>#178757</code>
+          </div>
+        </div>
+
+        <div class="horizon-section-heading" style="margin-top: 4rem;">
+          <p class="horizon-eyebrow">Typography</p>
+          <h2>Human at every scale</h2>
+        </div>
+        <div class="horizon-type-ramp">
+          <div class="horizon-type-row">
+            <span class="horizon-type-label">Display · Horizon Display</span>
+            <span class="horizon-type-display">Make today count.</span>
+          </div>
+          <div class="horizon-type-row">
+            <span class="horizon-type-label">Heading · Horizon Display</span>
+            <span class="horizon-type-heading">Your next move starts here</span>
+          </div>
+          <div class="horizon-type-row">
+            <span class="horizon-type-label">Subheading · Semibold</span>
+            <span class="horizon-type-subheading">Everyday Checking</span>
+          </div>
+          <div class="horizon-type-row">
+            <span class="horizon-type-label">Body · Regular</span>
+            <span class="horizon-type-body">See where your money is going, plan what comes next, and stay in control.</span>
+          </div>
+          <div class="horizon-type-row">
+            <span class="horizon-type-label">Legal · Regular</span>
+            <span class="horizon-type-legal">Terms, eligibility, and account conditions may apply.</span>
+          </div>
+          <div class="horizon-type-row">
+            <span class="horizon-type-label">Evidence · Monospace</span>
+            <span class="horizon-type-mono">event_id: evt_8f37a1 · status: authorized</span>
+          </div>
+        </div>
+
+        <div class="horizon-grid horizon-grid-2" style="margin-top: 1.25rem;">
+          <div class="horizon-card horizon-stack">
+            <div>
+              <p class="horizon-eyebrow">Spacing scale</p>
+              <h3>Predictable rhythm</h3>
+            </div>
+            <div class="horizon-token-row">
+              <div class="horizon-space-token">
+                <div class="horizon-space-block horizon-space-1"></div>
+                <p class="horizon-caption">8px</p>
+              </div>
+              <div class="horizon-space-token">
+                <div class="horizon-space-block horizon-space-2"></div>
+                <p class="horizon-caption">16px</p>
+              </div>
+              <div class="horizon-space-token">
+                <div class="horizon-space-block horizon-space-3"></div>
+                <p class="horizon-caption">24px</p>
+              </div>
+              <div class="horizon-space-token">
+                <div class="horizon-space-block horizon-space-4"></div>
+                <p class="horizon-caption">32px</p>
+              </div>
+            </div>
+          </div>
+          <div class="horizon-card horizon-stack">
+            <div>
+              <p class="horizon-eyebrow">Shape and elevation</p>
+              <h3>Soft, not playful</h3>
+            </div>
+            <div class="horizon-grid horizon-grid-3">
+              <div>
+                <div class="horizon-radius-example" style="border-radius: 0.4rem;">Control</div>
+                <p class="horizon-caption">6.4px radius</p>
+              </div>
+              <div>
+                <div class="horizon-radius-example" style="border-radius: 0.75rem;">Card</div>
+                <p class="horizon-caption">12px radius</p>
+              </div>
+              <div>
+                <div class="horizon-radius-example horizon-card-raised" style="border-radius: 999px;">Pill</div>
+                <p class="horizon-caption">Full radius</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="horizon-section-heading" style="margin-top: 4rem;">
+          <p class="horizon-eyebrow">Iconography</p>
+          <h2>Literal, useful, and easy to scan</h2>
+        </div>
+        <div class="horizon-icon-grid">
+          <div class="horizon-icon-tile"><img src="../icons/icon-building-bank-rgb-f1.svg" alt=""><span>Bank</span></div>
+          <div class="horizon-icon-tile horizon-icon-tile-red"><img class="horizon-icon-inverse" src="../icons/icon-ui-card.svg" alt=""><span>Card · inverse</span></div>
+          <div class="horizon-icon-tile horizon-icon-tile-dark"><img class="horizon-icon-inverse" src="../icons/icon-cashflow-rgb-f1.svg" alt=""><span>Cash flow · inverse</span></div>
+          <div class="horizon-icon-tile"><img src="../icons/icon-calendar-rgb-f1.svg" alt=""><span>Calendar</span></div>
+          <div class="horizon-icon-tile"><img src="../icons/icon-checkmark-rgb-f1.svg" alt=""><span>Complete</span></div>
+          <div class="horizon-icon-tile"><img src="../icons/icon-alert-rgb-f1.svg" alt=""><span>Alert</span></div>
+          <div class="horizon-icon-tile"><img src="../icons/icon-artificial-intelligence-rgb.svg" alt=""><span>Agent</span></div>
+          <div class="horizon-icon-tile"><img src="../icons/icon-contactlesspayment-rgb-f1.svg" alt=""><span>Contactless</span></div>
+          <div class="horizon-icon-tile"><img src="../icons/icon-ui-data-sharing.svg" alt=""><span>Data sharing</span></div>
+          <div class="horizon-icon-tile"><img src="../icons/icon-ui-device-laptop.svg" alt=""><span>Device</span></div>
+          <div class="horizon-icon-tile"><img src="../icons/icon-deposit-check.svg" alt=""><span>Deposit</span></div>
+          <div class="horizon-icon-tile"><img src="../icons/icon-conversation-rgb-f1.svg" alt=""><span>Support</span></div>
+        </div>
+      </section>
+
+      <section class="horizon-section horizon-section-plain" id="navigation">
+        <div class="horizon-section-heading">
+          <p class="horizon-eyebrow">03 · Navigation</p>
+          <h2>Orientation without noise</h2>
+          <p>Use plain labels, predictable order, and visible current states. Navigation should help people locate money and actions quickly.</p>
+        </div>
+
+        <div class="horizon-grid horizon-grid-2">
+          <div class="horizon-card horizon-stack">
+            <h3>Breadcrumbs</h3>
+            <nav class="horizon-breadcrumbs" aria-label="Breadcrumb example">
+              <ol>
+                <li><a href="#navigation">Accounts</a></li>
+                <li><a href="#navigation">Everyday Checking</a></li>
+                <li aria-current="page">Statements</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="horizon-card horizon-stack">
+            <h3>Pagination</h3>
+            <nav aria-label="Pagination example">
+              <ul class="horizon-pagination">
+                <li><a href="#navigation" aria-label="Previous page">‹</a></li>
+                <li><a href="#navigation" aria-current="page">1</a></li>
+                <li><a href="#navigation">2</a></li>
+                <li><a href="#navigation">3</a></li>
+                <li><a href="#navigation" aria-label="Next page">›</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="horizon-card horizon-span-2 horizon-stack">
+            <h3>Account tabs</h3>
+            <nav aria-label="Account detail example">
+              <div class="horizon-tabs">
+                <a class="horizon-tab" href="#navigation" aria-current="page">Activity</a>
+                <a class="horizon-tab" href="#navigation">Statements</a>
+                <a class="horizon-tab" href="#navigation">Account details</a>
+                <a class="horizon-tab" href="#navigation">Manage alerts</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </section>
+
+      <section class="horizon-section horizon-section-dark" id="controls">
+        <div class="horizon-section-heading">
+          <p class="horizon-eyebrow">04 · Controls</p>
+          <h2>Actions with unmistakable hierarchy</h2>
+          <p>Primary actions move a task forward. Secondary actions preserve choice. Destructive actions state exactly what will change.</p>
+        </div>
+
+        <div class="horizon-grid horizon-grid-2">
+          <div class="horizon-card horizon-stack">
+            <h3>Button hierarchy</h3>
+            <div class="horizon-actions">
+              <button class="horizon-button horizon-button-primary" type="button">Continue</button>
+              <button class="horizon-button horizon-button-secondary" type="button">Save for later</button>
+              <button class="horizon-button horizon-button-tertiary" type="button">Cancel</button>
+            </div>
+            <div class="horizon-actions">
+              <button class="horizon-button horizon-button-danger" type="button">Remove access</button>
+              <button class="horizon-button horizon-button-secondary horizon-button-loading" type="button">Processing</button>
+              <button class="horizon-button horizon-button-primary" type="button" disabled>Unavailable</button>
+            </div>
+          </div>
+          <div class="horizon-card horizon-stack">
+            <h3>Status indicators</h3>
+            <div class="horizon-actions">
+              <span class="horizon-status horizon-status-positive">Posted</span>
+              <span class="horizon-status horizon-status-info">In review</span>
+              <span class="horizon-status horizon-status-warning">Action needed</span>
+              <span class="horizon-status horizon-status-fault">Declined</span>
+              <span class="horizon-status">Inactive</span>
+            </div>
+            <p class="horizon-caption">Never rely on color alone. Every state includes a label and a distinct semantic role.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="horizon-section horizon-section-warm" id="forms">
+        <div class="horizon-section-heading">
+          <p class="horizon-eyebrow">05 · Forms</p>
+          <h2>Ask only for what is needed</h2>
+          <p>Visible labels, direct help text, and specific recovery instructions keep financial forms calm and understandable.</p>
+        </div>
+
+        <form class="horizon-grid horizon-grid-2" action="#forms">
+          <div class="horizon-card horizon-stack">
+            <div class="horizon-field">
+              <label for="nickname">Account nickname</label>
+              <input id="nickname" name="nickname" value="Household checking" autocomplete="off">
+              <small class="horizon-help">Shown only to you in Horizon Bank.</small>
+            </div>
+            <div class="horizon-field">
+              <label for="from-account">From account</label>
+              <select id="from-account" name="from-account">
+                <option>Everyday Checking ··1842 — $4,286.52</option>
+                <option>Wayfinder Savings ··9077 — $18,540.00</option>
+              </select>
+            </div>
+            <div class="horizon-field">
+              <label for="transfer-amount">Amount</label>
+              <div class="horizon-input-prefix">
+                <span aria-hidden="true">$</span>
+                <input id="transfer-amount" name="transfer-amount" inputmode="decimal" value="250.00">
+              </div>
+            </div>
+            <div class="horizon-field">
+              <label for="memo">Memo <span class="horizon-muted">(optional)</span></label>
+              <textarea id="memo" name="memo">July household budget</textarea>
+            </div>
+          </div>
+
+          <div class="horizon-card horizon-stack">
+            <div class="horizon-field horizon-field-error">
+              <label for="routing">Routing number</label>
+              <input id="routing" name="routing" value="1234" aria-invalid="true" aria-describedby="routing-error">
+              <small class="horizon-error-text" id="routing-error">Enter the 9-digit routing number.</small>
+            </div>
+            <fieldset class="horizon-control-group">
+              <legend>Transfer speed</legend>
+              <label class="horizon-check">
+                <input type="radio" name="speed" checked>
+                <span><strong>Standard</strong><br><span class="horizon-muted">Arrives in 1–3 business days · No fee</span></span>
+              </label>
+              <label class="horizon-check">
+                <input type="radio" name="speed">
+                <span><strong>Same day</strong><br><span class="horizon-muted">Arrives today · $2.50 fee</span></span>
+              </label>
+            </fieldset>
+            <fieldset class="horizon-control-group">
+              <legend>Preferences</legend>
+              <label class="horizon-check">
+                <input type="checkbox" checked>
+                <span>Email me when the transfer is complete</span>
+              </label>
+              <label class="horizon-check">
+                <input class="horizon-switch" type="checkbox" role="switch" checked>
+                <span><strong>Low balance alert</strong><br><span class="horizon-muted">Notify me below $200</span></span>
+              </label>
+            </fieldset>
+            <div class="horizon-actions horizon-card-actions">
+              <button class="horizon-button horizon-button-primary" type="submit">Review transfer</button>
+              <button class="horizon-button horizon-button-secondary" type="button">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="horizon-section horizon-section-plain" id="feedback">
+        <div class="horizon-section-heading">
+          <p class="horizon-eyebrow">06 · Feedback</p>
+          <h2>State, consequence, and next step</h2>
+          <p>Alerts explain what happened, what it means, and what the customer can do next.</p>
+        </div>
+
+        <div class="horizon-grid horizon-grid-2">
+          <div class="horizon-alert horizon-alert-positive" role="status">
+            <img src="../icons/icon-checkmark-rgb-f1.svg" alt="">
+            <div><strong>Transfer scheduled</strong><p>$250.00 will arrive in Wayfinder Savings on July 29.</p></div>
+          </div>
+          <div class="horizon-alert horizon-alert-info" role="status">
+            <img src="../icons/icon-ui-data-sharing.svg" alt="">
+            <div><strong>Your connection is active</strong><p>Budget Bloom can read balances and transactions until October 31.</p></div>
+          </div>
+          <div class="horizon-alert horizon-alert-warning" role="alert">
+            <img src="../icons/icon-alert-rgb-f1.svg" alt="">
+            <div><strong>Confirm your mailing address</strong><p>Your replacement card is ready. Review the delivery address before continuing.</p></div>
+          </div>
+          <div class="horizon-alert horizon-alert-fault" role="alert">
+            <img src="../icons/icon-alert-rgb-f1.svg" alt="">
+            <div><strong>We could not complete the transfer</strong><p>The destination account is unavailable. Check the details or choose another account.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="horizon-section horizon-section-warm" id="banking">
+        <div class="horizon-section-heading">
+          <p class="horizon-eyebrow">07 · Banking patterns</p>
+          <h2>Balances first. Details on demand.</h2>
+          <p>High-value information stays prominent while transaction tables and review summaries preserve precision.</p>
+        </div>
+
+        <div class="horizon-grid horizon-grid-3">
+          <article class="horizon-account-hero horizon-span-2">
+            <div>
+              <p class="horizon-eyebrow" style="color: #ffcd41;">Everyday Checking ··1842</p>
+              <p class="horizon-account-balance">$4,286.52</p>
+              <p>Available balance</p>
+            </div>
+            <div class="horizon-account-meta">
+              <span class="horizon-metric"><small>Current balance</small><strong>$4,398.87</strong></span>
+              <span class="horizon-metric"><small>Pending</small><strong>−$112.35</strong></span>
+              <span class="horizon-metric"><small>Next deposit</small><strong>Jul 31</strong></span>
+            </div>
+          </article>
+          <aside class="horizon-card horizon-stack">
+            <p class="horizon-eyebrow">Quick actions</p>
+            <button class="horizon-button horizon-button-primary" type="button">Transfer money</button>
+            <button class="horizon-button horizon-button-secondary" type="button">Pay a bill</button>
+            <button class="horizon-button horizon-button-secondary" type="button">Deposit a check</button>
+            <a href="#banking">View account details</a>
+          </aside>
+        </div>
+
+        <div class="horizon-section-heading" style="margin-top: 4rem;">
+          <p class="horizon-eyebrow">Transaction ledger</p>
+          <h2>Activity that scans and reconciles</h2>
+        </div>
+        <div class="horizon-table-wrap">
+          <table class="horizon-table">
+            <caption class="horizon-skip-link">Recent activity for Everyday Checking</caption>
+            <thead>
+              <tr><th scope="col">Merchant</th><th scope="col">Date</th><th scope="col">Status</th><th class="horizon-amount" scope="col">Amount</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="horizon-merchant"><span class="horizon-merchant-mark">MN</span><span><strong>Market North</strong><small>Groceries</small></span></span></td>
+                <td>Jul 27</td><td><span class="horizon-status horizon-status-warning">Pending</span></td><td class="horizon-amount">−$84.16</td>
+              </tr>
+              <tr>
+                <td><span class="horizon-merchant"><span class="horizon-merchant-mark">HB</span><span><strong>Horizon transfer</strong><small>From Wayfinder Savings</small></span></span></td>
+                <td>Jul 26</td><td><span class="horizon-status horizon-status-positive">Posted</span></td><td class="horizon-amount">+$500.00</td>
+              </tr>
+              <tr>
+                <td><span class="horizon-merchant"><span class="horizon-merchant-mark">CS</span><span><strong>Corner Street Coffee</strong><small>Dining</small></span></span></td>
+                <td>Jul 25</td><td><span class="horizon-status horizon-status-positive">Posted</span></td><td class="horizon-amount">−$8.40</td>
+              </tr>
+              <tr>
+                <td><span class="horizon-merchant"><span class="horizon-merchant-mark">RV</span><span><strong>Riverview Energy</strong><small>Utilities · Reversal</small></span></span></td>
+                <td>Jul 24</td><td><span class="horizon-status horizon-status-info">Reversed</span></td><td class="horizon-amount">+$112.35</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="horizon-section-heading" style="margin-top: 4rem;">
+          <p class="horizon-eyebrow">Review pattern</p>
+          <h2>One last check before money moves</h2>
+        </div>
+        <div class="horizon-review">
+          <div class="horizon-card horizon-stack">
+            <span class="horizon-status horizon-status-info">Ready to review</span>
+            <h3>Transfer to Wayfinder Savings</h3>
+            <p class="horizon-muted">Review the source, destination, amount, and timing. You can still edit any detail.</p>
+            <div class="horizon-alert horizon-alert-info" role="status">
+              <img src="../icons/icon-clock-rgb-f1.svg" alt="">
+              <div><strong>Expected arrival: July 29</strong><p>Standard transfers usually arrive in 1–3 business days.</p></div>
+            </div>
+            <div class="horizon-actions horizon-card-actions">
+              <button class="horizon-button horizon-button-primary" type="button">Schedule transfer</button>
+              <button class="horizon-button horizon-button-secondary" type="button">Edit details</button>
+            </div>
+          </div>
+          <aside class="horizon-summary">
+            <dl>
+              <div class="horizon-summary-row"><dt>From</dt><dd>Checking ··1842</dd></div>
+              <div class="horizon-summary-row"><dt>To</dt><dd>Savings ··9077</dd></div>
+              <div class="horizon-summary-row"><dt>Amount</dt><dd>$250.00</dd></div>
+              <div class="horizon-summary-row"><dt>Fee</dt><dd>$0.00</dd></div>
+              <div class="horizon-summary-row"><dt>Total</dt><dd>$250.00</dd></div>
+            </dl>
+          </aside>
+        </div>
+
+        <div class="horizon-section-heading" id="core-products-heading" style="margin-top: 4rem;">
+          <p class="horizon-eyebrow">Core product surfaces</p>
+          <h2>A consistent language across financial needs</h2>
+          <p>Product summaries surface the number that matters now, the next obligation or goal, and one clear path forward.</p>
+        </div>
+        <div class="horizon-grid horizon-grid-4">
+          <article class="horizon-card horizon-product-card">
+            <img class="horizon-product-icon" src="../icons/icon-ui-card.svg" alt="">
+            <div>
+              <p class="horizon-eyebrow">Credit card</p>
+              <h3>Horizon Active Cash ··2408</h3>
+            </div>
+            <div class="horizon-product-summary">
+              <p class="horizon-caption">Current balance</p>
+              <p class="horizon-product-value">$1,842.16</p>
+            </div>
+            <div class="horizon-product-line"><span>Minimum due</span><strong>$45.00</strong></div>
+            <div class="horizon-product-line"><span>Due date</span><strong>Aug 18</strong></div>
+            <div class="horizon-actions horizon-card-actions">
+              <button class="horizon-button horizon-button-primary" type="button">Make a payment</button>
+            </div>
+          </article>
+
+          <article class="horizon-card horizon-product-card">
+            <img class="horizon-product-icon" src="../icons/icon-cashstack-rgb-f1.svg" alt="">
+            <div>
+              <p class="horizon-eyebrow">Savings goal</p>
+              <h3>Emergency reserve</h3>
+            </div>
+            <div class="horizon-product-summary">
+              <p class="horizon-caption">Saved so far</p>
+              <p class="horizon-product-value">$8,250</p>
+            </div>
+            <div class="horizon-progress" role="progressbar" aria-label="Emergency reserve progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="69"><span style="width: 69%;"></span></div>
+            <div class="horizon-product-line"><span>Goal</span><strong>$12,000</strong></div>
+            <div class="horizon-product-line"><span>At this pace</span><strong>February</strong></div>
+            <div class="horizon-actions horizon-card-actions">
+              <button class="horizon-button horizon-button-secondary" type="button">Add money</button>
+            </div>
+          </article>
+
+          <article class="horizon-card horizon-product-card">
+            <img class="horizon-product-icon" src="../icons/icon-building-credit-rgb.svg" alt="">
+            <div>
+              <p class="horizon-eyebrow">Home lending</p>
+              <h3>Mortgage ··6731</h3>
+            </div>
+            <div class="horizon-product-summary">
+              <p class="horizon-caption">Next payment</p>
+              <p class="horizon-product-value">$2,146.82</p>
+            </div>
+            <div class="horizon-product-line"><span>Due date</span><strong>Aug 1</strong></div>
+            <div class="horizon-product-line"><span>Principal balance</span><strong>$284,910</strong></div>
+            <div class="horizon-actions horizon-card-actions">
+              <button class="horizon-button horizon-button-secondary" type="button">View mortgage</button>
+            </div>
+          </article>
+
+          <article class="horizon-card horizon-product-card">
+            <img class="horizon-product-icon" src="../icons/icon-calendar-rgb-f1.svg" alt="">
+            <div>
+              <p class="horizon-eyebrow">Bill pay</p>
+              <h3>Upcoming payments</h3>
+            </div>
+            <div class="horizon-product-summary">
+              <p class="horizon-caption">Scheduled this week</p>
+              <p class="horizon-product-value">$326.40</p>
+            </div>
+            <div class="horizon-product-line"><span>Riverview Energy</span><strong>$112.35</strong></div>
+            <div class="horizon-product-line"><span>Northline Wireless</span><strong>$84.05</strong></div>
+            <div class="horizon-product-line"><span>City Water</span><strong>$130.00</strong></div>
+            <div class="horizon-actions horizon-card-actions">
+              <button class="horizon-button horizon-button-secondary" type="button">Manage bills</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="horizon-section horizon-section-red" id="agent-commerce">
+        <div class="horizon-section-heading">
+          <p class="horizon-eyebrow">08 · Agent commerce</p>
+          <h2>Delegation remains visible and bounded</h2>
+          <p>The agent may plan and shop. Horizon Bank independently enforces authorization, approval, limits, and revocation.</p>
+        </div>
+
+        <div class="horizon-review">
+          <article class="horizon-card horizon-stack">
+            <span class="horizon-status horizon-status-warning">Approval required</span>
+            <div>
+              <p class="horizon-eyebrow">Horizon Agent Account</p>
+              <h3>Birthday gift from BrightBox Toys</h3>
+              <p class="horizon-muted">Nova found an option within your request. Review the exact checkout before Horizon authorizes payment.</p>
+            </div>
+            <ul class="horizon-list">
+              <li><span>Wooden dollhouse</span><strong class="horizon-amount">$79.99</strong></li>
+              <li><span>Tax and delivery</span><strong class="horizon-amount">$8.42</strong></li>
+              <li><span><strong>Total</strong></span><strong class="horizon-amount">$88.41</strong></li>
+            </ul>
+            <div class="horizon-grid horizon-grid-2">
+              <div><p class="horizon-caption">Merchant</p><strong>BrightBox Toys</strong></div>
+              <div><p class="horizon-caption">Delivery</p><strong>Tuesday · Home</strong></div>
+            </div>
+            <div class="horizon-actions horizon-card-actions">
+              <button class="horizon-button horizon-button-primary" type="button">Approve once</button>
+              <button class="horizon-button horizon-button-secondary" type="button">Reject purchase</button>
+            </div>
+          </article>
+
+          <aside class="horizon-card horizon-stack">
+            <p class="horizon-eyebrow">Authorization boundary</p>
+            <h3>Nova can spend within these limits</h3>
+            <div class="horizon-summary">
+              <dl>
+                <div class="horizon-summary-row"><dt>Per purchase</dt><dd>Up to $150</dd></div>
+                <div class="horizon-summary-row"><dt>Monthly total</dt><dd>Up to $500</dd></div>
+                <div class="horizon-summary-row"><dt>Allowed</dt><dd>Toys &amp; books</dd></div>
+                <div class="horizon-summary-row"><dt>Expires</dt><dd>Aug 31</dd></div>
+                <div class="horizon-summary-row"><dt>Approval</dt><dd>Every purchase</dd></div>
+              </dl>
+            </div>
+            <div class="horizon-actions horizon-card-actions">
+              <button class="horizon-button horizon-button-secondary" type="button">Change limits</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="horizon-section horizon-section-plain" aria-labelledby="controls-title">
+        <div class="horizon-section-heading">
+          <p class="horizon-eyebrow">Independent controls</p>
+          <h2 id="controls-title">Pause one boundary without losing the others</h2>
+          <p>Agent, consent, key, and Agent Account controls remain distinct so customers and operators can respond precisely.</p>
+        </div>
+
+        <div class="horizon-grid horizon-grid-2">
+          <ul class="horizon-revocation-list">
+            <li><div><strong>Shopping agent</strong><p>Stop Nova from starting new purchase requests.</p></div><button class="horizon-button horizon-button-secondary" type="button">Pause agent</button></li>
+            <li><div><strong>Data consent</strong><p>Remove permission to read balances and purchase history.</p></div><button class="horizon-button horizon-button-secondary" type="button">Revoke consent</button></li>
+            <li><div><strong>Signing key</strong><p>Retire the current key after suspected compromise.</p></div><button class="horizon-button horizon-button-secondary" type="button">Rotate key</button></li>
+            <li><div><strong>Horizon Agent Account</strong><p>Block any new authorizations from this spending container.</p></div><button class="horizon-button horizon-button-danger" type="button">Freeze account</button></li>
+          </ul>
+
+          <div class="horizon-card horizon-stack">
+            <p class="horizon-eyebrow">Immutable event trace</p>
+            <h3>Purchase run · run_72c41</h3>
+            <ol class="horizon-timeline">
+              <li><span class="horizon-timeline-dot"></span><div><strong>Intent created</strong><p>Gift request converted into bounded constraints.</p></div><time>10:14:02</time></li>
+              <li><span class="horizon-timeline-dot"></span><div><strong>Checkout bound</strong><p>Merchant, items, amount, and delivery locked.</p></div><time>10:14:21</time></li>
+              <li><span class="horizon-timeline-dot"></span><div><strong>Approval recorded</strong><p>Customer approved checkout chk_4d982 once.</p></div><time>10:15:08</time></li>
+              <li><span class="horizon-timeline-dot"></span><div><strong>Payment authorized</strong><p>Single-use credential provisioned and consumed.</p></div><time>10:15:11</time></li>
+              <li><span class="horizon-timeline-dot"></span><div><strong>Order confirmed</strong><p>Merchant confirmation attached to the run.</p></div><time>10:15:14</time></li>
+            </ol>
+          </div>
+        </div>
+
+        <details class="horizon-evidence" style="margin-top: 1rem;">
+          <summary>View redacted protocol evidence</summary>
+          <pre>{
+  "schema_version": "2026-07-01",
+  "event_id": "evt_8f37a1",
+  "event_type": "payment.authorized",
+  "intent_id": "int_34fd2",
+  "approval_id": "apr_921bd",
+  "checkout_hash": "sha256:63bd…2fe1",
+  "credential_reference": "[REDACTED]",
+  "amount": { "minor_units": 8841, "currency": "USD" },
+  "environment": "synthetic"
+}</pre>
+        </details>
+      </section>
+
+      <section class="horizon-section horizon-section-warm" id="data">
+        <div class="horizon-section-heading">
+          <p class="horizon-eyebrow">09 · Data visualization</p>
+          <h2>Comparison before decoration</h2>
+          <p>Labels and exact values stay visible. Color supports the story but never carries the meaning alone.</p>
+        </div>
+
+        <div class="horizon-grid horizon-grid-2">
+          <div class="horizon-card horizon-stack">
+            <div>
+              <p class="horizon-eyebrow">July spending</p>
+              <h3>$2,418.65 total</h3>
+            </div>
+            <div class="horizon-bars" aria-label="Spending by category">
+              <div class="horizon-bar-row"><span>Housing</span><span class="horizon-bar-track"><span class="horizon-bar-fill" style="display: block; width: 86%;"></span></span><strong>$1,240</strong></div>
+              <div class="horizon-bar-row"><span>Groceries</span><span class="horizon-bar-track"><span class="horizon-bar-fill horizon-bar-fill-indigo" style="display: block; width: 48%;"></span></span><strong>$486</strong></div>
+              <div class="horizon-bar-row"><span>Transport</span><span class="horizon-bar-track"><span class="horizon-bar-fill horizon-bar-fill-green" style="display: block; width: 32%;"></span></span><strong>$302</strong></div>
+              <div class="horizon-bar-row"><span>Everything else</span><span class="horizon-bar-track"><span class="horizon-bar-fill" style="display: block; width: 40%;"></span></span><strong>$390.65</strong></div>
+            </div>
+          </div>
+          <div class="horizon-card horizon-stack">
+            <div>
+              <p class="horizon-eyebrow">Cash-flow outlook</p>
+              <h3>Comfortable through August 9</h3>
+            </div>
+            <div class="horizon-alert horizon-alert-positive" role="status">
+              <img src="../icons/icon-cashflow-rgb-f1.svg" alt="">
+              <div><strong>$1,125 projected cushion</strong><p>After scheduled bills and the next expected paycheck.</p></div>
+            </div>
+            <dl>
+              <div class="horizon-summary-row"><dt>Available today</dt><dd>$4,286.52</dd></div>
+              <div class="horizon-summary-row"><dt>Scheduled bills</dt><dd>−$2,044.00</dd></div>
+              <div class="horizon-summary-row"><dt>Expected deposits</dt><dd>+$1,800.00</dd></div>
+              <div class="horizon-summary-row"><dt>Planned transfer</dt><dd>−$250.00</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="horizon-section horizon-section-plain" id="states">
+        <div class="horizon-section-heading">
+          <p class="horizon-eyebrow">10 · Operational states</p>
+          <h2>Complete experiences include the edges</h2>
+          <p>Loading, empty, interrupted, validation, and durable success states are part of the component—not cleanup work.</p>
+        </div>
+
+        <div class="horizon-grid horizon-grid-4">
+          <div class="horizon-skeleton" aria-label="Loading account activity">
+            <span class="horizon-skeleton-line"></span>
+            <span class="horizon-skeleton-line"></span>
+            <span class="horizon-skeleton-line"></span>
+            <span class="horizon-skeleton-box"></span>
+            <span class="horizon-caption">Loading</span>
+          </div>
+          <div class="horizon-state">
+            <img src="../icons/icon-binoculars-rgb-f1.svg" alt="">
+            <h3>No transactions yet</h3>
+            <p>New activity will appear here after your first purchase or transfer.</p>
+            <button class="horizon-button horizon-button-secondary" type="button">Explore account</button>
+          </div>
+          <div class="horizon-state">
+            <img src="../icons/icon-ui-device-unavailable.svg" alt="">
+            <h3>Connection interrupted</h3>
+            <p>Your changes are saved. Reconnect to finish scheduling the transfer.</p>
+            <button class="horizon-button horizon-button-primary" type="button">Try again</button>
+          </div>
+          <div class="horizon-state">
+            <img src="../icons/icon-checkmark-rgb-f1.svg" alt="">
+            <h3>Purchase approved</h3>
+            <p>Nova can complete this exact $88.41 checkout once. The approval expires in 10 minutes.</p>
+            <a href="#states">View approval details</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="horizon-section horizon-section-warm" id="imagery">
+        <div class="horizon-section-heading">
+          <p class="horizon-eyebrow">11 · Imagery</p>
+          <h2>Real goals, capable people</h2>
+          <p>Photography should feel candid and useful: a moment of planning, progress, or everyday life with room for clear editorial copy.</p>
+        </div>
+
+        <div class="horizon-photo-grid">
+          <article class="horizon-photo-card">
+            <img src="../stock/family-travel.jpg" alt="Family enjoying a trip together">
+            <div class="horizon-photo-overlay"><strong>Plans worth saving for</strong><p>Use wide editorial crops for stories and campaign moments.</p></div>
+          </article>
+          <article class="horizon-photo-card">
+            <img src="../stock/home-renovation.jpg" alt="Home renovation materials and plans">
+            <div class="horizon-photo-overlay"><strong>Make room for what is next</strong></div>
+          </article>
+          <article class="horizon-photo-card">
+            <img src="../stock/retirement-planning.jpg" alt="Person reviewing retirement plans">
+            <div class="horizon-photo-overlay"><strong>See the long view</strong></div>
+          </article>
+          <article class="horizon-photo-card">
+            <img src="../stock/receipt-capture.jpg" alt="Person capturing a receipt with a phone">
+            <div class="horizon-photo-overlay"><strong>Small tasks, quickly done</strong></div>
+          </article>
+          <article class="horizon-photo-card">
+            <img src="../stock/vehicle-planning.jpg" alt="Person planning for a vehicle purchase">
+            <div class="horizon-photo-overlay"><strong>Know before you go</strong></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="horizon-footer">
+      <div class="horizon-footer-inner">
+        <div>
+          <img src="../logos/horizon-bank-wordmark-white.svg" alt="Horizon Bank">
+          <p>One system for everyday banking, credit, saving, lending, service, and trusted new ways to pay.</p>
+        </div>
+        <a class="horizon-button horizon-button-secondary" href="#overview">Back to top</a>
+      </div>
+    </footer>
+  </body>
+</html>

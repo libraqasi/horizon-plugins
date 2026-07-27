@@ -1,0 +1,1583 @@
+@font-face {
+  font-family: "Horizon Sans";
+  src: url("../fonts/web/HorizonSans-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Horizon Sans";
+  src: url("../fonts/web/HorizonSans-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Horizon Sans";
+  src: url("../fonts/web/HorizonSans-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Horizon Sans Display";
+  src: url("../fonts/web/HorizonSans-Display.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --horizon-brand-primary: #d71e28;
+  --horizon-brand-primary-hover: #b01b24;
+  --horizon-brand-rule: #ffcd41;
+  --horizon-canvas: #ffffff;
+  --horizon-canvas-warm: #f4f0ed;
+  --horizon-surface-quiet: #f9f7f6;
+  --horizon-surface-strong: #e2dede;
+  --horizon-border-subtle: #e2dede;
+  --horizon-border-control: #787070;
+  --horizon-text: #141414;
+  --horizon-text-muted: #675f5f;
+  --horizon-link: #5a469b;
+  --horizon-link-hover: #352b6b;
+  --horizon-positive: #178757;
+  --horizon-positive-surface: #f9f7f6;
+  --horizon-info: #352b6b;
+  --horizon-info-surface: #f9f7f6;
+  --horizon-warning: #a93e00;
+  --horizon-warning-surface: #f9f7f6;
+  --horizon-fault: #87190a;
+  --horizon-fault-surface: #f9f7f6;
+  --horizon-radius-control: 0.4rem;
+  --horizon-radius-card: 0.75rem;
+  --horizon-radius-pill: 999px;
+  --horizon-shadow: 0 8px 24px rgb(20 20 20 / 0.08);
+  --horizon-shadow-raised: 0 18px 50px rgb(20 20 20 / 0.14);
+  --horizon-font-sans: "Horizon Sans", Arial, Helvetica, sans-serif;
+  --horizon-font-display: "Horizon Sans Display", "Horizon Sans", Arial, Helvetica, sans-serif;
+  --horizon-font-wordmark: Superclarendon, Rockwell, Georgia, serif;
+  --horizon-font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --horizon-content: 78rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color: var(--horizon-text);
+  background: var(--horizon-canvas-warm);
+  font-family: var(--horizon-font-sans);
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+.horizon-display {
+  font-family: var(--horizon-font-display);
+  font-style: normal;
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 6vw, 5.25rem);
+  line-height: 0.98;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+p {
+  line-height: 1.55;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: var(--horizon-link);
+  text-underline-offset: 0.16em;
+}
+
+a:hover {
+  color: var(--horizon-link-hover);
+}
+
+:focus-visible {
+  outline: 2px solid var(--horizon-text);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--horizon-canvas);
+}
+
+.horizon-skip-link {
+  position: fixed;
+  top: -5rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  color: var(--horizon-text);
+  background: var(--horizon-canvas);
+  border: 2px solid var(--horizon-text);
+}
+
+.horizon-skip-link:focus {
+  top: 1rem;
+}
+
+.horizon-header {
+  min-height: 4.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0.72rem max(1rem, calc((100vw - var(--horizon-content)) / 2));
+  color: white;
+  background: var(--horizon-brand-primary);
+}
+
+.horizon-brand {
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.horizon-brand img {
+  display: block;
+  width: clamp(13rem, 23vw, 18rem);
+  height: auto;
+}
+
+.horizon-header-note {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.horizon-brand-rule {
+  height: 0.25rem;
+  background: var(--horizon-brand-rule);
+}
+
+.horizon-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  background: var(--horizon-canvas);
+  border-bottom: 1px solid var(--horizon-border-subtle);
+  box-shadow: 0 3px 14px rgb(20 20 20 / 0.05);
+}
+
+.horizon-nav ul {
+  width: min(var(--horizon-content), 100%);
+  display: flex;
+  gap: 0.3rem;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  list-style: none;
+}
+
+.horizon-nav a {
+  min-height: 2.35rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.8rem;
+  color: var(--horizon-text);
+  border-radius: var(--horizon-radius-pill);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.horizon-nav a:hover {
+  background: var(--horizon-surface-quiet);
+}
+
+.horizon-main {
+  overflow: hidden;
+}
+
+.horizon-section {
+  padding: clamp(4rem, 8vw, 7rem) max(1rem, calc((100vw - var(--horizon-content)) / 2));
+  scroll-margin-top: 4rem;
+}
+
+.horizon-section-plain {
+  background: var(--horizon-canvas);
+}
+
+.horizon-section-warm {
+  background: var(--horizon-canvas-warm);
+}
+
+.horizon-section-dark {
+  color: white;
+  background: #141414;
+}
+
+.horizon-section-red {
+  color: white;
+  background: var(--horizon-brand-primary);
+}
+
+.horizon-hero {
+  min-height: 42rem;
+  display: grid;
+  align-items: end;
+  color: white;
+  background:
+    linear-gradient(90deg, rgb(20 20 20 / 0.79), rgb(20 20 20 / 0.18)),
+    url("../stock/entrepreneurship.jpg") center 40% / cover;
+}
+
+.horizon-hero-inner {
+  width: min(47rem, 100%);
+  padding-block: clamp(5rem, 11vw, 9rem);
+}
+
+.horizon-hero .horizon-eyebrow {
+  color: var(--horizon-brand-rule);
+}
+
+.horizon-hero p {
+  max-width: 39rem;
+  margin: 1.5rem 0 0;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+}
+
+.horizon-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.horizon-hero-chip {
+  padding: 0.45rem 0.75rem;
+  color: white;
+  background: rgb(20 20 20 / 0.42);
+  border: 1px solid rgb(255 255 255 / 0.55);
+  border-radius: var(--horizon-radius-pill);
+  font-size: 0.84rem;
+  font-weight: 600;
+  backdrop-filter: blur(5px);
+}
+
+.horizon-section-heading {
+  max-width: 48rem;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.horizon-section-heading p:last-child {
+  max-width: 43rem;
+  margin-bottom: 0;
+  color: var(--horizon-text-muted);
+  font-size: 1.05rem;
+}
+
+.horizon-section-dark .horizon-section-heading p:last-child,
+.horizon-section-red .horizon-section-heading p:last-child {
+  color: rgb(255 255 255 / 0.78);
+}
+
+.horizon-eyebrow {
+  margin: 0 0 0.45rem;
+  color: var(--horizon-brand-primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.horizon-section-red .horizon-eyebrow,
+.horizon-section-dark .horizon-eyebrow {
+  color: var(--horizon-brand-rule);
+}
+
+.horizon-section-red .horizon-card .horizon-eyebrow,
+.horizon-section-dark .horizon-card .horizon-eyebrow {
+  color: var(--horizon-brand-primary);
+}
+
+.horizon-brand-name {
+  margin: 0;
+  font-family: var(--horizon-font-wordmark);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+  -webkit-text-stroke: 0.012em currentColor;
+  text-transform: uppercase;
+}
+
+.horizon-muted,
+.horizon-help {
+  color: var(--horizon-text-muted);
+}
+
+.horizon-caption {
+  margin: 0;
+  color: var(--horizon-text-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.horizon-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.horizon-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.horizon-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.horizon-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.horizon-span-2 {
+  grid-column: span 2;
+}
+
+.horizon-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.horizon-card {
+  padding: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--horizon-text);
+  background: var(--horizon-canvas);
+  border: 1px solid var(--horizon-border-subtle);
+  border-radius: var(--horizon-radius-card);
+}
+
+.horizon-card-raised {
+  box-shadow: var(--horizon-shadow);
+}
+
+.horizon-card-red {
+  color: white;
+  background: var(--horizon-brand-primary);
+  border-color: var(--horizon-brand-primary);
+}
+
+.horizon-card-dark {
+  color: white;
+  background: #141414;
+  border-color: #141414;
+}
+
+.horizon-identity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.horizon-identity-asset {
+  margin: 0;
+}
+
+.horizon-identity-swatch {
+  min-height: 11rem;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: var(--horizon-canvas);
+  border: 1px solid var(--horizon-border-subtle);
+  border-radius: var(--horizon-radius-card);
+}
+
+.horizon-identity-swatch-inverse {
+  background: var(--horizon-brand-primary);
+  border-color: var(--horizon-brand-primary);
+}
+
+.horizon-identity-wordmark {
+  display: block;
+  width: min(100%, 30rem);
+  height: auto;
+}
+
+.horizon-identity-icon {
+  display: block;
+  width: 6.25rem;
+  height: 6.25rem;
+}
+
+.horizon-identity-asset figcaption {
+  margin-top: 0.6rem;
+  color: var(--horizon-text-muted);
+  font-size: 0.875rem;
+}
+
+.horizon-swatch {
+  min-height: 11.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-radius: var(--horizon-radius-card);
+}
+
+.horizon-swatch strong,
+.horizon-swatch code {
+  display: block;
+}
+
+.horizon-swatch code {
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
+}
+
+.horizon-swatch-red {
+  color: white;
+  background: var(--horizon-brand-primary);
+}
+
+.horizon-swatch-yellow {
+  background: var(--horizon-brand-rule);
+}
+
+.horizon-swatch-warm {
+  background: var(--horizon-canvas-warm);
+  border: 1px solid var(--horizon-border-subtle);
+}
+
+.horizon-swatch-ink {
+  color: white;
+  background: var(--horizon-text);
+}
+
+.horizon-swatch-indigo {
+  color: white;
+  background: var(--horizon-link);
+}
+
+.horizon-swatch-green {
+  color: white;
+  background: var(--horizon-positive);
+}
+
+.horizon-type-ramp {
+  padding: 0;
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--horizon-border-subtle);
+  border-radius: var(--horizon-radius-card);
+}
+
+.horizon-type-row {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 2rem;
+  align-items: baseline;
+  padding: 1.4rem 1.5rem;
+  border-bottom: 1px solid var(--horizon-border-subtle);
+}
+
+.horizon-type-row:last-child {
+  border-bottom: 0;
+}
+
+.horizon-type-label {
+  color: var(--horizon-text-muted);
+  font-size: 0.8rem;
+}
+
+.horizon-type-display {
+  font-family: var(--horizon-font-display);
+  font-size: clamp(2rem, 6vw, 4.25rem);
+  line-height: 1;
+}
+
+.horizon-type-heading {
+  font-family: var(--horizon-font-display);
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  line-height: 1.05;
+}
+
+.horizon-type-subheading {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.horizon-type-body {
+  font-size: 1rem;
+}
+
+.horizon-type-legal {
+  font-size: 0.78rem;
+}
+
+.horizon-type-mono {
+  font-family: var(--horizon-font-mono);
+  font-size: 0.88rem;
+}
+
+.horizon-token-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: end;
+}
+
+.horizon-space-token {
+  min-width: 7rem;
+}
+
+.horizon-space-block {
+  height: 2.8rem;
+  background: var(--horizon-brand-rule);
+  border: 1px solid var(--horizon-warning);
+}
+
+.horizon-space-1 {
+  width: 0.5rem;
+}
+
+.horizon-space-2 {
+  width: 1rem;
+}
+
+.horizon-space-3 {
+  width: 1.5rem;
+}
+
+.horizon-space-4 {
+  width: 2rem;
+}
+
+.horizon-radius-example {
+  min-height: 6rem;
+  display: grid;
+  place-items: center;
+  background: var(--horizon-surface-strong);
+  border: 1px solid var(--horizon-border-subtle);
+}
+
+.horizon-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.horizon-icon-tile {
+  min-height: 7.5rem;
+  display: grid;
+  place-items: center;
+  gap: 0.45rem;
+  padding: 0.75rem;
+  text-align: center;
+  background: transparent;
+  border: 1px solid var(--horizon-border-subtle);
+  border-radius: var(--horizon-radius-card);
+}
+
+.horizon-icon-tile-red {
+  background: var(--horizon-brand-primary);
+  border-color: var(--horizon-brand-primary);
+}
+
+.horizon-icon-tile-dark {
+  background: var(--horizon-text);
+  border-color: var(--horizon-text);
+}
+
+.horizon-icon-tile img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.horizon-icon-inverse {
+  filter: brightness(0) invert(1);
+}
+
+.horizon-icon-tile span {
+  color: var(--horizon-text-muted);
+  font-size: 0.75rem;
+}
+
+.horizon-icon-tile-red span,
+.horizon-icon-tile-dark span {
+  color: white;
+}
+
+.horizon-breadcrumbs ol,
+.horizon-tabs,
+.horizon-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.horizon-breadcrumbs li:not(:last-child)::after {
+  margin-left: 0.5rem;
+  color: var(--horizon-text-muted);
+  content: "/";
+}
+
+.horizon-tabs {
+  gap: 0;
+  border-bottom: 1px solid var(--horizon-border-subtle);
+}
+
+.horizon-tab {
+  min-height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  color: var(--horizon-text);
+  border-bottom: 3px solid transparent;
+  text-decoration: none;
+}
+
+.horizon-tab[aria-current="page"] {
+  border-bottom-color: var(--horizon-brand-primary);
+  font-weight: 600;
+}
+
+.horizon-pagination a,
+.horizon-pagination span {
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  display: inline-grid;
+  place-items: center;
+  padding: 0.3rem;
+  color: var(--horizon-text);
+  border: 1px solid var(--horizon-border-subtle);
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.horizon-pagination [aria-current="page"] {
+  color: white;
+  background: var(--horizon-brand-primary);
+  border-color: var(--horizon-brand-primary);
+}
+
+.horizon-button {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.15rem;
+  border: 1px solid transparent;
+  border-radius: var(--horizon-radius-pill);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.horizon-button img {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.horizon-button-primary {
+  color: white;
+  background: var(--horizon-brand-primary);
+}
+
+.horizon-button-primary:hover {
+  color: white;
+  background: var(--horizon-brand-primary-hover);
+}
+
+.horizon-button-secondary {
+  color: var(--horizon-text);
+  background: white;
+  border-color: var(--horizon-border-control);
+}
+
+.horizon-button-tertiary {
+  color: var(--horizon-link);
+  background: transparent;
+  border-color: transparent;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.horizon-button-danger {
+  color: white;
+  background: var(--horizon-fault);
+}
+
+.horizon-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.horizon-button-loading::before {
+  width: 0.85rem;
+  height: 0.85rem;
+  content: "";
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+}
+
+.horizon-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.horizon-card-actions {
+  margin-block-start: 1.5rem;
+}
+
+.horizon-stack > .horizon-card-actions {
+  margin-block-start: 0.5rem;
+}
+
+.horizon-control-group {
+  display: grid;
+  gap: 1.1rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.horizon-control-group legend {
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.horizon-check {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+}
+
+.horizon-check input:not(.horizon-switch) {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.16rem;
+  accent-color: var(--horizon-brand-primary);
+}
+
+.horizon-check .horizon-switch {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 3rem;
+  min-width: 3rem;
+  height: 1.65rem;
+  min-height: 1.65rem;
+  margin: 0.05rem 0 0;
+  padding: 0;
+  flex: 0 0 auto;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--horizon-border-control);
+  border: 0;
+  border-radius: var(--horizon-radius-pill);
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.horizon-check .horizon-switch::after {
+  position: absolute;
+  top: 0.2rem;
+  left: 0.2rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  content: "";
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.28);
+  transition: transform 160ms ease;
+}
+
+.horizon-check .horizon-switch:checked {
+  background: var(--horizon-positive);
+}
+
+.horizon-check .horizon-switch:checked::after {
+  transform: translateX(1.35rem);
+}
+
+.horizon-check .horizon-switch:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.horizon-field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.horizon-field label,
+.horizon-field-label {
+  font-weight: 600;
+}
+
+.horizon-field input,
+.horizon-field select,
+.horizon-field textarea {
+  width: 100%;
+  min-height: 2.85rem;
+  padding: 0.65rem 0.75rem;
+  color: var(--horizon-text);
+  background: white;
+  border: 1px solid var(--horizon-border-control);
+  border-radius: var(--horizon-radius-control);
+}
+
+.horizon-field textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.horizon-field input:focus,
+.horizon-field select:focus,
+.horizon-field textarea:focus {
+  border-color: var(--horizon-link);
+  outline: 2px solid var(--horizon-link);
+  outline-offset: 1px;
+}
+
+.horizon-field-error input {
+  border: 2px solid var(--horizon-fault);
+}
+
+.horizon-error-text {
+  color: var(--horizon-fault);
+  font-weight: 600;
+}
+
+.horizon-input-prefix {
+  position: relative;
+}
+
+.horizon-input-prefix span {
+  position: absolute;
+  top: 50%;
+  left: 0.8rem;
+  transform: translateY(-50%);
+  color: var(--horizon-text-muted);
+}
+
+.horizon-input-prefix input {
+  padding-left: 1.8rem;
+}
+
+.horizon-status {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  padding: 0.28rem 0.68rem;
+  color: var(--horizon-text);
+  background: var(--horizon-surface-quiet);
+  border: 1px solid var(--horizon-border-subtle);
+  border-radius: var(--horizon-radius-pill);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.horizon-status::before {
+  width: 0.5rem;
+  height: 0.5rem;
+  content: "";
+  background: var(--horizon-border-control);
+  border-radius: 50%;
+}
+
+.horizon-status-positive::before {
+  background: var(--horizon-positive);
+}
+
+.horizon-status-info::before {
+  background: var(--horizon-info);
+}
+
+.horizon-status-warning::before {
+  background: var(--horizon-warning);
+}
+
+.horizon-status-fault::before {
+  background: var(--horizon-fault);
+}
+
+.horizon-alert {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.9rem;
+  padding: 1rem;
+  border: 1px solid;
+  border-left-width: 0.35rem;
+  border-radius: var(--horizon-radius-control);
+}
+
+.horizon-alert img {
+  width: 1.45rem;
+  height: 1.45rem;
+}
+
+.horizon-alert p {
+  margin: 0.3rem 0 0;
+}
+
+.horizon-alert-positive {
+  background: var(--horizon-positive-surface);
+  border-color: var(--horizon-positive);
+}
+
+.horizon-alert-info {
+  background: var(--horizon-info-surface);
+  border-color: var(--horizon-info);
+}
+
+.horizon-alert-warning {
+  background: var(--horizon-warning-surface);
+  border-color: var(--horizon-warning);
+}
+
+.horizon-alert-fault {
+  background: var(--horizon-fault-surface);
+  border-color: var(--horizon-fault);
+}
+
+.horizon-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: white;
+  border: 1px solid var(--horizon-border-subtle);
+  border-radius: var(--horizon-radius-card);
+}
+
+.horizon-list > li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--horizon-border-subtle);
+}
+
+.horizon-list > li:last-child {
+  border-bottom: 0;
+}
+
+.horizon-amount {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.horizon-account-hero {
+  min-height: 19rem;
+  display: grid;
+  align-content: space-between;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  color: white;
+  background: linear-gradient(135deg, #d71e28 0%, #b01b24 100%);
+  border-radius: var(--horizon-radius-card);
+  box-shadow: var(--horizon-shadow-raised);
+}
+
+.horizon-account-hero p {
+  margin: 0;
+}
+
+.horizon-account-balance {
+  font-family: var(--horizon-font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1;
+}
+
+.horizon-account-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.horizon-product-card {
+  position: relative;
+  min-height: 28rem;
+  overflow: hidden;
+}
+
+.horizon-product-card::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 0.3rem;
+  content: "";
+  background: var(--horizon-brand-primary);
+}
+
+.horizon-product-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-top: 0.35rem;
+}
+
+.horizon-product-value {
+  margin: 0.2rem 0 0;
+  font-family: var(--horizon-font-display);
+  font-size: 2.15rem;
+  line-height: 1;
+}
+
+.horizon-product-summary {
+  display: grid;
+  gap: 0.2rem;
+  margin-block-end: 0.75rem;
+}
+
+.horizon-product-summary .horizon-product-value {
+  margin: 0;
+}
+
+.horizon-product-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  padding-block: 0.55rem;
+  border-bottom: 1px solid var(--horizon-border-subtle);
+  font-size: 0.88rem;
+}
+
+.horizon-progress {
+  height: 0.65rem;
+  margin-block-end: 0.5rem;
+  overflow: hidden;
+  background: var(--horizon-border-subtle);
+  border-radius: var(--horizon-radius-pill);
+}
+
+.horizon-progress span {
+  height: 100%;
+  display: block;
+  background: var(--horizon-positive);
+  border-radius: inherit;
+}
+
+.horizon-metric {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.horizon-metric strong {
+  font-size: 1.3rem;
+}
+
+.horizon-table-wrap {
+  overflow-x: auto;
+  background: white;
+  border: 1px solid var(--horizon-border-subtle);
+  border-radius: var(--horizon-radius-card);
+}
+
+.horizon-table {
+  width: 100%;
+  min-width: 46rem;
+  border-collapse: collapse;
+}
+
+.horizon-table th,
+.horizon-table td {
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid var(--horizon-border-subtle);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.horizon-table th {
+  color: var(--horizon-text-muted);
+  background: var(--horizon-surface-quiet);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.horizon-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.horizon-table .horizon-amount {
+  text-align: right;
+}
+
+.horizon-merchant {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.horizon-merchant-mark {
+  width: 2.4rem;
+  height: 2.4rem;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  background: var(--horizon-surface-strong);
+  border-radius: 50%;
+  font-weight: 600;
+}
+
+.horizon-merchant small {
+  display: block;
+  color: var(--horizon-text-muted);
+}
+
+.horizon-review {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(19rem, 0.8fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.horizon-summary {
+  padding: 1.4rem;
+  background: var(--horizon-surface-quiet);
+  border-radius: var(--horizon-radius-card);
+}
+
+.horizon-summary dl {
+  margin: 0;
+}
+
+.horizon-summary-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--horizon-border-subtle);
+}
+
+.horizon-summary-row:last-child {
+  border-bottom: 0;
+}
+
+.horizon-summary dt,
+.horizon-summary dd {
+  margin: 0;
+}
+
+.horizon-summary dd {
+  font-weight: 600;
+  text-align: right;
+}
+
+.horizon-timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.horizon-timeline::before {
+  position: absolute;
+  top: 0.7rem;
+  bottom: 1rem;
+  left: 0.46rem;
+  width: 2px;
+  content: "";
+  background: var(--horizon-border-subtle);
+}
+
+.horizon-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1rem minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  padding-bottom: 1.3rem;
+}
+
+.horizon-timeline-dot {
+  z-index: 1;
+  width: 0.95rem;
+  height: 0.95rem;
+  margin-top: 0.2rem;
+  background: var(--horizon-positive);
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--horizon-positive);
+}
+
+.horizon-timeline p {
+  margin: 0.18rem 0 0;
+  color: var(--horizon-text-muted);
+  font-size: 0.88rem;
+}
+
+.horizon-timeline time {
+  color: var(--horizon-text-muted);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.horizon-revocation-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: white;
+  border: 1px solid var(--horizon-border-subtle);
+  border-radius: var(--horizon-radius-card);
+}
+
+.horizon-revocation-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--horizon-border-subtle);
+}
+
+.horizon-revocation-list li:last-child {
+  border-bottom: 0;
+}
+
+.horizon-revocation-list p {
+  margin: 0.2rem 0 0;
+  color: var(--horizon-text-muted);
+  font-size: 0.86rem;
+}
+
+.horizon-evidence {
+  padding: 1rem;
+  color: #ffffff;
+  background: #141414;
+  border-radius: var(--horizon-radius-card);
+}
+
+.horizon-evidence summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.horizon-evidence pre {
+  overflow-x: auto;
+  margin: 1rem 0 0;
+  padding: 1rem;
+  background: #141414;
+  border: 1px solid #787070;
+  border-radius: var(--horizon-radius-control);
+  font-family: var(--horizon-font-mono);
+  font-size: 0.76rem;
+  line-height: 1.6;
+}
+
+.horizon-bars {
+  display: grid;
+  gap: 1rem;
+}
+
+.horizon-bar-row {
+  display: grid;
+  grid-template-columns: 9rem minmax(8rem, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.horizon-bar-track {
+  height: 0.8rem;
+  overflow: hidden;
+  background: var(--horizon-surface-strong);
+  border-radius: var(--horizon-radius-pill);
+}
+
+.horizon-bar-fill {
+  height: 100%;
+  background: var(--horizon-brand-primary);
+  border-radius: inherit;
+}
+
+.horizon-bar-fill-indigo {
+  background: var(--horizon-link);
+}
+
+.horizon-bar-fill-green {
+  background: var(--horizon-positive);
+}
+
+.horizon-photo-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 0.8fr;
+  grid-template-rows: repeat(2, 15rem);
+  gap: 1rem;
+}
+
+.horizon-photo-card {
+  position: relative;
+  min-height: 15rem;
+  overflow: hidden;
+  border-radius: var(--horizon-radius-card);
+}
+
+.horizon-photo-card:first-child {
+  grid-row: span 2;
+}
+
+.horizon-photo-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.horizon-photo-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 2.4rem 1rem 1rem;
+  color: white;
+  background: linear-gradient(transparent, rgb(20 20 20 / 0.82));
+}
+
+.horizon-photo-overlay p {
+  margin: 0.2rem 0 0;
+  font-size: 0.86rem;
+}
+
+.horizon-state {
+  min-height: 17rem;
+  display: grid;
+  align-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  background: white;
+  border: 1px solid var(--horizon-border-subtle);
+  border-radius: var(--horizon-radius-card);
+}
+
+.horizon-state img {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0 auto;
+}
+
+.horizon-state p {
+  max-width: 23rem;
+  margin: 0 auto;
+  color: var(--horizon-text-muted);
+}
+
+.horizon-skeleton {
+  min-height: 17rem;
+  display: grid;
+  align-content: center;
+  gap: 0.8rem;
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid var(--horizon-border-subtle);
+  border-radius: var(--horizon-radius-card);
+}
+
+.horizon-skeleton-line {
+  height: 0.85rem;
+  background: linear-gradient(90deg, #e2dede, #f9f7f6, #e2dede);
+  border-radius: var(--horizon-radius-pill);
+}
+
+.horizon-skeleton-line:nth-child(2) {
+  width: 76%;
+}
+
+.horizon-skeleton-line:nth-child(3) {
+  width: 55%;
+}
+
+.horizon-skeleton-box {
+  height: 7rem;
+  margin-top: 0.8rem;
+  background: var(--horizon-surface-strong);
+  border-radius: var(--horizon-radius-card);
+}
+
+.horizon-footer {
+  padding: 3rem max(1rem, calc((100vw - var(--horizon-content)) / 2));
+  color: white;
+  background: #141414;
+}
+
+.horizon-footer-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: end;
+}
+
+.horizon-footer img {
+  width: 14rem;
+}
+
+.horizon-footer p {
+  max-width: 38rem;
+  margin-bottom: 0;
+  color: rgb(255 255 255 / 0.72);
+}
+
+.horizon-mono {
+  font-family: var(--horizon-font-mono);
+}
+
+@media (max-width: 64rem) {
+  .horizon-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .horizon-icon-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .horizon-photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, 14rem);
+  }
+
+  .horizon-photo-card:first-child {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 48rem) {
+  .horizon-header {
+    min-height: 4.25rem;
+    padding-inline: 1rem;
+  }
+
+  .horizon-header-note {
+    display: none;
+  }
+
+  .horizon-section {
+    padding: 4rem 1rem;
+  }
+
+  .horizon-hero {
+    min-height: 35rem;
+    background-position: 58% center;
+  }
+
+  .horizon-grid-2,
+  .horizon-grid-3,
+  .horizon-grid-4,
+  .horizon-identity-grid,
+  .horizon-review {
+    grid-template-columns: 1fr;
+  }
+
+  .horizon-span-2 {
+    grid-column: auto;
+  }
+
+  .horizon-icon-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .horizon-type-row {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  .horizon-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .horizon-actions .horizon-button {
+    width: 100%;
+  }
+
+  .horizon-account-meta {
+    gap: 1rem;
+  }
+
+  .horizon-product-card {
+    min-height: auto;
+  }
+
+  .horizon-bar-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .horizon-bar-track {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .horizon-photo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 14rem);
+  }
+
+  .horizon-photo-card:first-child {
+    grid-column: auto;
+  }
+
+  .horizon-footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .horizon-button,
+  .horizon-card,
+  .horizon-status,
+  .horizon-alert {
+    forced-color-adjust: auto;
+  }
+}

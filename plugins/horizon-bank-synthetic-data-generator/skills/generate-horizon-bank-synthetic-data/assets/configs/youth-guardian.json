@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "dataset": {"name": "horizon-youth-guardian", "seed": 1101, "scenario_date": "2026-07-27", "time_mode": "fixed", "timezone": "America/New_York", "locale": "en-US", "currency": "USD"},
+  "scale": {"preset": "custom", "customers": 1, "history_days": 90},
+  "archetypes": {"include": ["youth-guardian"]},
+  "modules": ["households", "accounts", "cards", "transactions", "incomes", "budgets", "goals", "alerts", "devices", "delegations"],
+  "overlays": ["payday", "new-dependent"],
+  "outputs": {"formats": ["bundle-json", "jsonl", "csv", "sqlite", "mongo"]},
+  "narrative": {"mode": "template"}
+}

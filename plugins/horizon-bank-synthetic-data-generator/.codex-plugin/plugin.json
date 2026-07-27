@@ -1,0 +1,41 @@
+{
+  "name": "horizon-bank-synthetic-data-generator",
+  "version": "1.0.0+codex.20260727200151",
+  "description": "Plan, generate, serve, adapt, and validate coherent synthetic customer and banking data for Horizon Bank prototypes.",
+  "author": {
+    "name": "Horizon developer enablement"
+  },
+  "keywords": [
+    "horizon-bank",
+    "synthetic-data",
+    "banking",
+    "fixtures",
+    "personas",
+    "sqlite",
+    "mongodb",
+    "rest-api"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Horizon Bank Synthetic Data Generator",
+    "shortDescription": "Create coherent synthetic banking data.",
+    "longDescription": "Inspect a prototype, plan the right synthetic-data contract, generate seeded Horizon Bank personas and financial records in portable formats, and validate privacy, referential integrity, dates, and financial arithmetic.",
+    "developerName": "Horizon developer enablement",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Plan",
+      "Generate",
+      "Write",
+      "Review"
+    ],
+    "defaultPrompt": [
+      "Plan synthetic data for this Horizon prototype.",
+      "Generate a seeded Horizon customer dataset.",
+      "Validate this Horizon synthetic banking data."
+    ],
+    "brandColor": "#D71E28",
+    "composerIcon": "./assets/horizon-bank-icon.svg",
+    "logo": "./assets/horizon-bank-icon.svg",
+    "logoDark": "./assets/horizon-bank-icon.svg"
+  }
+}

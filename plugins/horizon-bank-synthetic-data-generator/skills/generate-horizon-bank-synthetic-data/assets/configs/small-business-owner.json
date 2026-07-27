@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "dataset": {"name": "horizon-small-business-owner", "seed": 1606, "scenario_date": "2026-07-27", "time_mode": "fixed", "timezone": "America/New_York", "locale": "en-US", "currency": "USD"},
+  "scale": {"preset": "custom", "customers": 1, "history_days": 365},
+  "archetypes": {"include": ["small-business-owner"]},
+  "modules": ["businesses", "accounts", "cards", "transactions", "incomes", "loans", "budgets", "goals", "rewards", "alerts", "service_interactions", "devices", "delegations"],
+  "overlays": ["payday", "job-change"],
+  "outputs": {"formats": ["bundle-json", "jsonl", "csv", "sqlite", "mongo"]},
+  "narrative": {"mode": "template"}
+}
