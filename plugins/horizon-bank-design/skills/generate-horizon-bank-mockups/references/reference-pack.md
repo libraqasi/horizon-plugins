@@ -48,7 +48,7 @@ Use `assets/horizon-bank-icon.svg` only for the skill's own UI metadata when nee
 - `assets/icons/` contains the full reusable banking and utility SVG set. Search filenames by concept before choosing an icon.
 - `assets/stock/` contains seven editorial photographs. Use them only when the image adds meaning, not as filler.
 
-Preserve source filenames and aspect ratios. Do not trace or redraw identity assets from a screenshot when the original SVG is bundled.
+Preserve source filenames and aspect ratios. When rendering an SVG icon with HTML/CSS, constrain one axis and leave the other `auto`, or use `max-width`, `max-height`, and `object-fit: contain` inside a bounded area. Do not trace or redraw identity assets from a screenshot when the original SVG is bundled.
 
 ## Reference priority
 

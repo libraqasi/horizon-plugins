@@ -53,7 +53,7 @@ When a raster model cannot reproduce Horizon Sans, favor a humanist sans with si
 - Follow an 8 px rhythm with common gaps of 8, 16, 24, and 32 px.
 - Use cards only for meaningful grouping. Preserve tables, ledgers, timelines, comparisons, and review summaries when their structure matters.
 - Keep one visually dominant primary action. Name the outcome, such as “Review transfer,” “Approve once,” or “Freeze account.”
-- Use bundled line icons to reinforce visible labels. Do not use oversized decorative finance glyphs.
+- Use bundled line icons to reinforce visible labels. Preserve their intrinsic proportions by sizing one axis and leaving the other automatic, or fit them within bounded areas with `object-fit: contain`; never force non-square icons into square dimensions. Do not use oversized decorative finance glyphs.
 
 ## Banking patterns
 

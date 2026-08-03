@@ -39,6 +39,7 @@
 - Leave at least 0.5rem between a progress bar and the next detail row. Amounts, supporting visualizations, dividers, and actions must never appear as one undifferentiated block.
 - Make the whole card clickable only when it has one destination and clear semantics.
 - Keep icon canvases transparent. Use the bundled dark monochrome icons directly on light surfaces and the starter’s `.horizon-icon-inverse` treatment when an `<img>` sits on red or dark surfaces. Make any backing tile part of the surrounding component rather than baking a white rectangle into the SVG.
+- Preserve the intrinsic proportions of every icon. For `<img>` icons, set only width or height and leave the other dimension `auto`; when a shared visual area needs both bounds, use `max-width`, `max-height`, and `object-fit: contain`. Do not apply the same fixed width and height to non-square SVGs, because wider support, mobility, and payment artwork will be squeezed.
 
 ## Accounts, approvals, and transactions
 

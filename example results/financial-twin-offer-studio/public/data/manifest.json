@@ -1,0 +1,330 @@
+{
+  "config": {
+    "archetypes": {
+      "include": [
+        "everyday-banking"
+      ]
+    },
+    "dataset": {
+      "currency": "USD",
+      "institution": "Horizon Bank",
+      "locale": "en-US",
+      "name": "horizon-offer-discovery",
+      "resolved_scenario_date": "2026-07-27",
+      "scenario_date": "2026-07-27",
+      "seed": 1303,
+      "synthetic": true,
+      "time_mode": "fixed",
+      "timezone": "America/New_York"
+    },
+    "modules": [
+      "accounts",
+      "cards",
+      "transactions",
+      "incomes",
+      "budgets",
+      "goals",
+      "rewards",
+      "alerts",
+      "service_interactions",
+      "devices"
+    ],
+    "narrative": {
+      "mode": "template"
+    },
+    "outputs": {
+      "formats": [
+        "bundle-json",
+        "jsonl",
+        "csv",
+        "sqlite",
+        "mongo"
+      ]
+    },
+    "overlays": [
+      "payday",
+      "overdraft-risk"
+    ],
+    "scale": {
+      "customers": 1,
+      "history_days": 180,
+      "max_transactions": 75,
+      "min_transactions": 25,
+      "preset": "custom"
+    },
+    "schema_version": "1.0.0"
+  },
+  "counts": {
+    "accounts": 2,
+    "alerts": 1,
+    "budgets": 4,
+    "businesses": 0,
+    "cards": 1,
+    "customers": 1,
+    "delegations": 0,
+    "devices": 1,
+    "disputes": 0,
+    "events": 2,
+    "goals": 1,
+    "households": 0,
+    "incomes": 1,
+    "investments": 0,
+    "loans": 0,
+    "merchants": 8,
+    "rewards": 1,
+    "service_interactions": 1,
+    "transactions": 72
+  },
+  "dataset_id": "data_b5d0784e382e7142bebd",
+  "dataset_name": "horizon-offer-discovery",
+  "files": {
+    "bundle.json": {
+      "bytes": 31511,
+      "sha256": "7adc97c0b744953860fcee57639e407358a82cbd8c6f45ce751a29aea61b07c1"
+    },
+    "csv/accounts.csv": {
+      "bytes": 936,
+      "sha256": "6611d781dc81de1c8278db2d07ec88ddd51b9f4407834da8f41dd90e6f11be78"
+    },
+    "csv/alerts.csv": {
+      "bytes": 423,
+      "sha256": "aee805e52b9f835f89325ec4649340f84a3fbea15912950330c0804c47a00db7"
+    },
+    "csv/budgets.csv": {
+      "bytes": 1315,
+      "sha256": "bcff2c9aa0a7250c014867e642d2699155b5a2f2c745190dfc42a5304e103a28"
+    },
+    "csv/businesses.csv": {
+      "bytes": 51,
+      "sha256": "03ee50b9a33ff231d7571fc61f3bd050743b2974c3b7cc221709dffb129302f9"
+    },
+    "csv/cards.csv": {
+      "bytes": 534,
+      "sha256": "35dfd68bdb37cd7c632aa347e931391f5069ece97e9ccd63f3ff6bb5d4f5251d"
+    },
+    "csv/customers.csv": {
+      "bytes": 950,
+      "sha256": "28277df899f5139d85b9ae0d643b9d317a636eaf1dfd4f423ea9964eebcfa08d"
+    },
+    "csv/delegations.csv": {
+      "bytes": 51,
+      "sha256": "03ee50b9a33ff231d7571fc61f3bd050743b2974c3b7cc221709dffb129302f9"
+    },
+    "csv/devices.csv": {
+      "bytes": 324,
+      "sha256": "8d667d259dce10801aee1575faf5988c18410fdb8c59c4bed519a0c539cbf5e0"
+    },
+    "csv/disputes.csv": {
+      "bytes": 51,
+      "sha256": "03ee50b9a33ff231d7571fc61f3bd050743b2974c3b7cc221709dffb129302f9"
+    },
+    "csv/events.csv": {
+      "bytes": 683,
+      "sha256": "9bd08dc0b38f2db6b9254bf8329bd5506df5f20b831ac1b488b7ecfad8f591ed"
+    },
+    "csv/goals.csv": {
+      "bytes": 342,
+      "sha256": "6646208770f0c3782662777d99f97a43b75fe8833b421295313004ad1b27bf40"
+    },
+    "csv/households.csv": {
+      "bytes": 51,
+      "sha256": "03ee50b9a33ff231d7571fc61f3bd050743b2974c3b7cc221709dffb129302f9"
+    },
+    "csv/incomes.csv": {
+      "bytes": 394,
+      "sha256": "ee11e99ab776b2c767c80ab700d43de2968cdd71f6cf754d9e4d640a7e3219e4"
+    },
+    "csv/investments.csv": {
+      "bytes": 51,
+      "sha256": "03ee50b9a33ff231d7571fc61f3bd050743b2974c3b7cc221709dffb129302f9"
+    },
+    "csv/loans.csv": {
+      "bytes": 51,
+      "sha256": "03ee50b9a33ff231d7571fc61f3bd050743b2974c3b7cc221709dffb129302f9"
+    },
+    "csv/merchants.csv": {
+      "bytes": 1208,
+      "sha256": "eac9f30e13ab059b1f135be98090832022a8a1ebc595b195f2941525c5189c6d"
+    },
+    "csv/rewards.csv": {
+      "bytes": 300,
+      "sha256": "aa5ef9950a04087a62bc241cf051daf855ba4d3c1375cfff6a67af34ba882bdc"
+    },
+    "csv/service_interactions.csv": {
+      "bytes": 337,
+      "sha256": "000f5ef51f4215f896f140d4a7df0e51f2d55cceeb2dda76a9dad369d1fabd3c"
+    },
+    "csv/transactions.csv": {
+      "bytes": 35942,
+      "sha256": "63b23337cc22102b05b3e43c712833a75c3647936a23f732c9a68b9f73bc0d61"
+    },
+    "horizon_synthetic.sqlite": {
+      "bytes": 372736,
+      "sha256": "3505dfe01c4fcfc1946049e0d545e6b6a70c79b7f576d660b874907586e765a5"
+    },
+    "jsonl/accounts.jsonl": {
+      "bytes": 687,
+      "sha256": "670b6bb5e6ddadb0feb7187b5311238ad3a0c894dc7957d9a44449e9223eaef4"
+    },
+    "jsonl/alerts.jsonl": {
+      "bytes": 250,
+      "sha256": "0cc719be998e1dd4291babe09133878cacadd49c2b4f2943741a17ede252344a"
+    },
+    "jsonl/budgets.jsonl": {
+      "bytes": 916,
+      "sha256": "5f01909fd4878adc76de077bd9ca7ce0994d454377a08e5fd050dac6f351ab1d"
+    },
+    "jsonl/businesses.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/cards.jsonl": {
+      "bytes": 359,
+      "sha256": "3c6f1c2525bf3693a30cab549b24b0028df6926f7eb2820f7ee8574ece63189e"
+    },
+    "jsonl/customers.jsonl": {
+      "bytes": 771,
+      "sha256": "5e6c339782269cf702887bc79095203be3bb4d5a7a1b33236da00d3a734ace7a"
+    },
+    "jsonl/delegations.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/devices.jsonl": {
+      "bytes": 192,
+      "sha256": "4ec35b1d575129f98666132f56a917d5de67f2d4ab6b415ed728c5ca7ef16818"
+    },
+    "jsonl/disputes.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/events.jsonl": {
+      "bytes": 396,
+      "sha256": "856fa7f6c9263ce61bac0de9ce4cd767ee44c1a2b42921eeeac5b62d22548c84"
+    },
+    "jsonl/goals.jsonl": {
+      "bytes": 208,
+      "sha256": "42f393788f547aa4c0c5dbdade61ed156969469f190d0726d29b8cd527007d40"
+    },
+    "jsonl/households.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/incomes.jsonl": {
+      "bytes": 233,
+      "sha256": "9bba0b41a694ddcff6946b11e215333bd2b69969ceec8e2802f44a4834b6b282"
+    },
+    "jsonl/investments.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/loans.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/merchants.jsonl": {
+      "bytes": 789,
+      "sha256": "744f7109ead0a9cb6465290398281fd9902b8a5d56ed193b9929e86c67a811bb"
+    },
+    "jsonl/rewards.jsonl": {
+      "bytes": 172,
+      "sha256": "349d204d8da95cd06ab62ae342446796544da86031187757fb8dc806057c2a57"
+    },
+    "jsonl/service_interactions.jsonl": {
+      "bytes": 203,
+      "sha256": "c5c16f230f14d7635fa882937185ccdf70814adccebb191ea29b20d580d37b72"
+    },
+    "jsonl/transactions.jsonl": {
+      "bytes": 25823,
+      "sha256": "ce91f746c08150abcfd9670ad42faba891a65d31b9bd3532b06a58489cd9bb58"
+    },
+    "mongo/IMPORT.md": {
+      "bytes": 1602,
+      "sha256": "264207c15bcf5e442c7d9d8c5ed8312e5867ff65ad666009f118ac5b3bfa074c"
+    },
+    "mongo/accounts.jsonl": {
+      "bytes": 687,
+      "sha256": "670b6bb5e6ddadb0feb7187b5311238ad3a0c894dc7957d9a44449e9223eaef4"
+    },
+    "mongo/alerts.jsonl": {
+      "bytes": 250,
+      "sha256": "0cc719be998e1dd4291babe09133878cacadd49c2b4f2943741a17ede252344a"
+    },
+    "mongo/budgets.jsonl": {
+      "bytes": 916,
+      "sha256": "5f01909fd4878adc76de077bd9ca7ce0994d454377a08e5fd050dac6f351ab1d"
+    },
+    "mongo/businesses.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mongo/cards.jsonl": {
+      "bytes": 359,
+      "sha256": "3c6f1c2525bf3693a30cab549b24b0028df6926f7eb2820f7ee8574ece63189e"
+    },
+    "mongo/customers.jsonl": {
+      "bytes": 771,
+      "sha256": "5e6c339782269cf702887bc79095203be3bb4d5a7a1b33236da00d3a734ace7a"
+    },
+    "mongo/delegations.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mongo/devices.jsonl": {
+      "bytes": 192,
+      "sha256": "4ec35b1d575129f98666132f56a917d5de67f2d4ab6b415ed728c5ca7ef16818"
+    },
+    "mongo/disputes.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mongo/events.jsonl": {
+      "bytes": 396,
+      "sha256": "856fa7f6c9263ce61bac0de9ce4cd767ee44c1a2b42921eeeac5b62d22548c84"
+    },
+    "mongo/goals.jsonl": {
+      "bytes": 208,
+      "sha256": "42f393788f547aa4c0c5dbdade61ed156969469f190d0726d29b8cd527007d40"
+    },
+    "mongo/households.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mongo/incomes.jsonl": {
+      "bytes": 233,
+      "sha256": "9bba0b41a694ddcff6946b11e215333bd2b69969ceec8e2802f44a4834b6b282"
+    },
+    "mongo/investments.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mongo/loans.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mongo/merchants.jsonl": {
+      "bytes": 789,
+      "sha256": "744f7109ead0a9cb6465290398281fd9902b8a5d56ed193b9929e86c67a811bb"
+    },
+    "mongo/rewards.jsonl": {
+      "bytes": 172,
+      "sha256": "349d204d8da95cd06ab62ae342446796544da86031187757fb8dc806057c2a57"
+    },
+    "mongo/service_interactions.jsonl": {
+      "bytes": 203,
+      "sha256": "c5c16f230f14d7635fa882937185ccdf70814adccebb191ea29b20d580d37b72"
+    },
+    "mongo/transactions.jsonl": {
+      "bytes": 25823,
+      "sha256": "ce91f746c08150abcfd9670ad42faba891a65d31b9bd3532b06a58489cd9bb58"
+    }
+  },
+  "institution": "Horizon Bank",
+  "narrative": {
+    "mode": "template",
+    "override_count": 0
+  },
+  "scenario_date": "2026-07-27",
+  "schema_version": "1.0.0",
+  "synthetic": true
+}

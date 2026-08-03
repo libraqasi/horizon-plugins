@@ -1,0 +1,136 @@
+{
+  "version": "1.0.0",
+  "title": "Financial Twin",
+  "disclosure": "Financial Twin is an educational simulation. Its outcomes are illustrative and do not represent actual product terms, rewards, savings, eligibility, or account activity.",
+  "pathways": [
+    {
+      "id": "cash",
+      "name": "Horizon Active Cash",
+      "eyebrow": "Everyday rewards lens",
+      "description": "A simulation lens for everyday purchase decisions and simple rewards tradeoffs.",
+      "accent": "red",
+      "modifier": {"rewards": 35, "preparedness": 1},
+      "match_tags": ["everyday", "repair", "home"]
+    },
+    {
+      "id": "travel",
+      "name": "Horizon Travel Rewards",
+      "eyebrow": "Travel planning lens",
+      "description": "A simulation lens for trip timing, experiences, and travel-reward tradeoffs.",
+      "accent": "indigo",
+      "modifier": {"rewards": 80, "preparedness": 0},
+      "match_tags": ["travel", "experience"]
+    },
+    {
+      "id": "cashflow",
+      "name": "Horizon Everyday + Way2Save",
+      "eyebrow": "Cash-flow and savings lens",
+      "description": "A simulation lens for maintaining a cushion and keeping a savings goal in view.",
+      "accent": "green",
+      "modifier": {"cash_minor": 1200, "goal_minor": 500, "preparedness": 2},
+      "match_tags": ["emergency", "home", "everyday"]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "starting",
+      "title": "Starting point",
+      "months": "January–February",
+      "description": "Set your rhythm before the year gets busy.",
+      "events": [
+        {
+          "id": "repair",
+          "month": 1,
+          "tag": "repair",
+          "title": "A repair you did not plan for",
+          "body": "Your car needs a repair before a week of commitments. You want to keep moving without losing sight of your reserve.",
+          "choices": [
+            {"id": "reserve", "label": "Use part of my cash cushion", "body": "Pay the repair now and pause a planned goal contribution.", "effects": {"cash_minor": -4200, "goal_minor": -600, "rewards": 10, "preparedness": -2}},
+            {"id": "split", "label": "Split the expense across two paychecks", "body": "Keep more cash available now and make a smaller goal adjustment.", "effects": {"cash_minor": -2200, "goal_minor": -300, "rewards": 20, "preparedness": -1}},
+            {"id": "delay", "label": "Delay the repair and reprioritize", "body": "Hold cash today, with a tradeoff to routine and future flexibility.", "effects": {"cash_minor": -800, "goal_minor": 0, "rewards": 0, "preparedness": -4}}
+          ]
+        },
+        {
+          "id": "payday", "month": 2, "tag": "everyday", "title": "A little room after payday", "body": "A regular deposit clears. You have a small amount to direct before the next month begins.",
+          "choices": [
+            {"id": "save", "label": "Put most of it toward my reserve", "body": "Build the cushion before adding anything new.", "effects": {"cash_minor": 800, "goal_minor": 2800, "rewards": 0, "preparedness": 4}},
+            {"id": "balance", "label": "Split it between spending and saving", "body": "Make visible progress while leaving room for everyday plans.", "effects": {"cash_minor": 1700, "goal_minor": 1500, "rewards": 25, "preparedness": 2}},
+            {"id": "enjoy", "label": "Use it for a long-awaited purchase", "body": "Choose a near-term priority and keep the goal steady for now.", "effects": {"cash_minor": -400, "goal_minor": 0, "rewards": 45, "preparedness": 0}}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pressure",
+      "title": "Everyday pressure",
+      "months": "April–May",
+      "description": "A few ordinary decisions start to stack up.",
+      "events": [
+        {
+          "id": "subscriptions", "month": 4, "tag": "everyday", "title": "Small subscriptions, bigger total", "body": "You notice a few recurring charges have grown into a meaningful monthly amount.",
+          "choices": [
+            {"id": "trim", "label": "Trim and move the difference to my goal", "body": "Reduce recurring spend and turn it into a monthly habit.", "effects": {"cash_minor": 1800, "goal_minor": 1800, "rewards": 0, "preparedness": 3}},
+            {"id": "keep", "label": "Keep the services I use most", "body": "Keep the routines that matter and make a smaller change elsewhere.", "effects": {"cash_minor": 600, "goal_minor": 600, "rewards": 15, "preparedness": 1}},
+            {"id": "ignore", "label": "Leave it for later", "body": "Keep the month simple and revisit it when time allows.", "effects": {"cash_minor": -900, "goal_minor": 0, "rewards": 0, "preparedness": -1}}
+          ]
+        },
+        {
+          "id": "trip", "month": 5, "tag": "travel", "title": "A trip invite arrives", "body": "Friends are planning a long weekend. The timing is good, but the budget is not automatic.",
+          "choices": [
+            {"id": "go", "label": "Go, with a clear trip budget", "body": "Join the trip while choosing a capped total and a lighter goal contribution.", "effects": {"cash_minor": -3600, "goal_minor": -500, "rewards": 100, "preparedness": 0}},
+            {"id": "short", "label": "Join for a shorter version", "body": "Keep the experience while reducing travel and lodging costs.", "effects": {"cash_minor": -1800, "goal_minor": 300, "rewards": 65, "preparedness": 1}},
+            {"id": "pass", "label": "Pass and strengthen my goal", "body": "Use the planned spend to make noticeable reserve progress.", "effects": {"cash_minor": 1000, "goal_minor": 2600, "rewards": 0, "preparedness": 4}}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opportunity",
+      "title": "Opportunity moment",
+      "months": "July–August",
+      "description": "A new possibility changes the shape of the year.",
+      "events": [
+        {
+          "id": "project", "month": 7, "tag": "home", "title": "A home project becomes urgent", "body": "A small repair could become a bigger issue if you wait through another season.",
+          "choices": [
+            {"id": "complete", "label": "Complete the repair now", "body": "Address it early and keep future disruption lower in the simulation.", "effects": {"cash_minor": -3000, "goal_minor": -300, "rewards": 30, "preparedness": 2}},
+            {"id": "stabilize", "label": "Choose a temporary fix", "body": "Reduce the near-term hit while setting a later repair plan.", "effects": {"cash_minor": -1200, "goal_minor": 0, "rewards": 15, "preparedness": -1}},
+            {"id": "wait", "label": "Wait and protect cash", "body": "Keep the cushion today, accepting more uncertainty later.", "effects": {"cash_minor": 0, "goal_minor": 300, "rewards": 0, "preparedness": -3}}
+          ]
+        },
+        {
+          "id": "bonus", "month": 8, "tag": "experience", "title": "An unexpected bonus", "body": "A small one-time bonus shows up. It can support any priority you choose.",
+          "choices": [
+            {"id": "reserve", "label": "Put it all toward my reserve", "body": "Convert a one-time lift into a stronger base.", "effects": {"cash_minor": 1200, "goal_minor": 3500, "rewards": 0, "preparedness": 5}},
+            {"id": "mix", "label": "Share it between goals and fun", "body": "Give the future and the present a visible share.", "effects": {"cash_minor": 1500, "goal_minor": 1800, "rewards": 50, "preparedness": 2}},
+            {"id": "experience", "label": "Fund a meaningful experience", "body": "Make room for a planned memory and leave the goal unchanged.", "effects": {"cash_minor": -400, "goal_minor": 0, "rewards": 90, "preparedness": 0}}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reflection",
+      "title": "Year-end reflection",
+      "months": "October–November",
+      "description": "Finish the season with a clearer picture of your tradeoffs.",
+      "events": [
+        {
+          "id": "health", "month": 10, "tag": "emergency", "title": "A health expense arrives", "body": "A routine visit turns into an unexpected bill just before the holidays.",
+          "choices": [
+            {"id": "cash", "label": "Pay from my cushion", "body": "Use available cash and keep other commitments unchanged.", "effects": {"cash_minor": -2500, "goal_minor": 0, "rewards": 0, "preparedness": -1}},
+            {"id": "plan", "label": "Set a payment plan", "body": "Preserve more immediate cash while committing to a future monthly amount.", "effects": {"cash_minor": -900, "goal_minor": -500, "rewards": 10, "preparedness": 0}},
+            {"id": "adjust", "label": "Adjust my holiday plan now", "body": "Create room early and keep the bill from crowding the next month.", "effects": {"cash_minor": 300, "goal_minor": 600, "rewards": 0, "preparedness": 3}}
+          ]
+        },
+        {
+          "id": "finish", "month": 11, "tag": "everyday", "title": "Close out the season", "body": "You can choose the final emphasis before your Financial Twin recap.",
+          "choices": [
+            {"id": "finishgoal", "label": "Make one final goal contribution", "body": "Carry forward a stronger reserve and a clear next milestone.", "effects": {"cash_minor": -500, "goal_minor": 2200, "rewards": 0, "preparedness": 4}},
+            {"id": "balanceyear", "label": "Keep a balanced finish", "body": "Leave room in cash while making steady progress.", "effects": {"cash_minor": 600, "goal_minor": 900, "rewards": 35, "preparedness": 2}},
+            {"id": "reset", "label": "Keep cash flexible", "body": "Hold more cash for a fresh start and reset the goal next month.", "effects": {"cash_minor": 1500, "goal_minor": 0, "rewards": 10, "preparedness": 1}}
+          ]
+        }
+      ]
+    }
+  ]
+}

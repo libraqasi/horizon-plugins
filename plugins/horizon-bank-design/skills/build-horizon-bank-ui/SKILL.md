@@ -27,7 +27,7 @@ Create a credible bank experience that feels established, calm, and task-focused
 - Keep the red masthead, thin yellow rule, warm neutral field, indigo links, and restrained green status treatment recognizable without saturating every surface.
 - Use the bundled Horizon Sans family for digital UI and Horizon Sans Display for brief page and section headings. Use IBM Plex Mono only for protocol payloads, identifiers, and developer evidence.
 - Preserve the supplied logo geometry, aspect ratio, colors, and safe space. Do not redraw, recolor, distort, crop, outline, or animate it.
-- Use the bundled SVG icons when they fit; use icons to reinforce a visible label rather than replace one by default. Their canvases are transparent and their artwork is dark monochrome: use them directly on light surfaces and apply the starter’s inverse treatment on red or dark surfaces.
+- Use the bundled SVG icons when they fit; use icons to reinforce a visible label rather than replace one by default. Their canvases are transparent and their artwork is dark monochrome: use them directly on light surfaces and apply the starter’s inverse treatment on red or dark surfaces. Preserve each icon’s intrinsic aspect ratio: constrain one dimension and leave the other automatic, or fit it within a bounded wrapper with `object-fit: contain`; never force every non-square SVG to the same width and height.
 
 ## Product truth without repetitive disclaimers
 

@@ -1,0 +1,2 @@
+id,customer_id,account_id,event_date,payload_json
+inco_faee5845f15543317181,cust_e42886c0bc3349c975cc,acco_017d9971987524d4dded,,"{""account_id"":""acco_017d9971987524d4dded"",""cadence"":""biweekly"",""currency"":""USD"",""customer_id"":""cust_e42886c0bc3349c975cc"",""id"":""inco_faee5845f15543317181"",""source"":""Synthetic employer"",""synthetic"":true,""typical_amount_minor"":152472}"

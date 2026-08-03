@@ -26,6 +26,7 @@ Do not deliver with any of these:
 - Cards communicate real groups; tables, timelines, ledgers, or summaries remain structured when needed.
 - Buttons have a clear hierarchy and name outcomes.
 - Icons reinforce visible labels and do not replace important text.
+- Wide, square, and narrow icons retain their intrinsic proportions; no icon is stretched or squeezed to fill a fixed box.
 - Photography, if present, supports the customer story and leaves clear room for UI copy.
 - The artifact remains understandable at thumbnail size without becoming sparse at full size.
 

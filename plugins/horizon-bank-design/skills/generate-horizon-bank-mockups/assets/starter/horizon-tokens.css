@@ -625,9 +625,21 @@ a:hover {
   border-color: var(--horizon-text);
 }
 
+/* SVG icon canvases vary in aspect ratio. Fix one axis and cap the other. */
+.horizon-icon-tile img,
+.horizon-button img,
+.horizon-alert img,
+.horizon-product-icon,
+.horizon-state img {
+  display: block;
+  width: auto;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
 .horizon-icon-tile img {
-  width: 2rem;
   height: 2rem;
+  max-width: 3rem;
 }
 
 .horizon-icon-inverse {
@@ -715,8 +727,8 @@ a:hover {
 }
 
 .horizon-button img {
-  width: 1.15rem;
   height: 1.15rem;
+  max-width: 1.5rem;
 }
 
 .horizon-button-primary {
@@ -958,8 +970,8 @@ a:hover {
 }
 
 .horizon-alert img {
-  width: 1.45rem;
   height: 1.45rem;
+  max-width: 2rem;
 }
 
 .horizon-alert p {
@@ -1055,8 +1067,8 @@ a:hover {
 }
 
 .horizon-product-icon {
-  width: 2.25rem;
   height: 2.25rem;
+  max-width: 3.5rem;
   margin-top: 0.35rem;
 }
 
@@ -1392,8 +1404,8 @@ a:hover {
 }
 
 .horizon-state img {
-  width: 2.5rem;
   height: 2.5rem;
+  max-width: 3.5rem;
   margin: 0 auto;
 }
 

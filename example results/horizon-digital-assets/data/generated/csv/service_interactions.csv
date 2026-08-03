@@ -1,0 +1,2 @@
+id,customer_id,account_id,event_date,payload_json
+serv_c84c4896a368843a50fd,cust_e42886c0bc3349c975cc,,,"{""channel"":""voice"",""customer_id"":""cust_e42886c0bc3349c975cc"",""id"":""serv_c84c4896a368843a50fd"",""occurred_at"":""2026-07-27T14:30:00Z"",""resolution"":""self_service"",""synthetic"":true,""topic"":""account_summary""}"
