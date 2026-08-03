@@ -8,6 +8,7 @@ import sys
 import tempfile
 import threading
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
@@ -22,6 +23,7 @@ SERVER_SCRIPTS = GENERATE_SKILL / "scripts"
 CONFIG = GENERATE_SKILL / "assets" / "configs" / "all-archetypes-small.json"
 
 sys.path.insert(0, str(SERVER_SCRIPTS))
+from horizon_data_core import resolve_config  # noqa: E402
 from serve_horizon_data import create_server  # noqa: E402
 
 
@@ -257,6 +259,76 @@ class ToolkitTests(unittest.TestCase):
         self.assertEqual(manifest["config"]["scale"]["history_days"], 365)
         self.assertEqual(manifest["config"]["scale"]["min_transactions"], 150)
         self.assertEqual(manifest["config"]["scale"]["max_transactions"], 350)
+
+    def test_configured_currency_propagates_and_is_validated(self) -> None:
+        raw = json.loads(CONFIG.read_text(encoding="utf-8"))
+        raw["dataset"]["currency"] = "EUR"
+        raw["scale"] = {
+            "preset": "custom",
+            "customers": 1,
+            "history_days": 30,
+            "min_transactions": 4,
+            "max_transactions": 4,
+        }
+        raw["outputs"]["formats"] = ["jsonl"]
+        config = self.root / "eur-config.json"
+        config.write_text(json.dumps(raw), encoding="utf-8")
+        output = self.root / "eur-dataset"
+        subprocess.run(
+            [sys.executable, str(GENERATOR), "--config", str(config), "--out", str(output)],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+
+        currencies = {
+            record["currency"]
+            for path in (output / "jsonl").glob("*.jsonl")
+            for line in path.read_text(encoding="utf-8").splitlines()
+            if line
+            for record in [json.loads(line)]
+            if "currency" in record
+        }
+        self.assertEqual(currencies, {"EUR"})
+        valid = subprocess.run(
+            [sys.executable, str(VALIDATOR), str(output), "--strict"],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(valid.returncode, 0, valid.stdout + valid.stderr)
+
+        accounts_path = output / "jsonl" / "accounts.jsonl"
+        lines = accounts_path.read_text(encoding="utf-8").splitlines()
+        account = json.loads(lines[0])
+        account["currency"] = "USD"
+        lines[0] = json.dumps(account, sort_keys=True, separators=(",", ":"))
+        accounts_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        invalid = subprocess.run(
+            [sys.executable, str(VALIDATOR), str(output), "--strict"],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        self.assertNotEqual(invalid.returncode, 0)
+        report = json.loads(invalid.stdout)
+        self.assertTrue(
+            any("must match configured currency EUR" in error for error in report["errors"]),
+            report["errors"],
+        )
+
+    def test_rolling_scenario_date_uses_configured_timezone(self) -> None:
+        raw = json.loads(CONFIG.read_text(encoding="utf-8"))
+        raw["dataset"]["time_mode"] = "rolling"
+        reference = datetime(2026, 8, 4, 2, 0, tzinfo=timezone.utc)
+
+        raw["dataset"]["timezone"] = "America/New_York"
+        new_york = resolve_config(raw, now_utc=reference)
+        self.assertEqual(new_york["dataset"]["resolved_scenario_date"], "2026-08-03")
+
+        raw["dataset"]["timezone"] = "Asia/Tokyo"
+        tokyo = resolve_config(raw, now_utc=reference)
+        self.assertEqual(tokyo["dataset"]["resolved_scenario_date"], "2026-08-04")
 
     def test_validator_detects_financial_mutation(self) -> None:
         mutated = self.root / "mutated"

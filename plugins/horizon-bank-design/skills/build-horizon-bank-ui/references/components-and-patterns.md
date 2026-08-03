@@ -1,5 +1,7 @@
 # Components and patterns
 
+The financial hierarchy, state, safety, and content patterns in this reference are broadly reusable. DOM roles, CSS selectors, browser breakpoints, hover behavior, and focus-return instructions are web implementation examples. Other platforms should preserve the intended outcome through their native controls, navigation, accessibility model, and layout conventions rather than copying web mechanics literally.
+
 ## Global frame
 
 - Use a red masthead with the standalone white Horizon Bank wordmark and a thin yellow bottom rule. Add the HB icon only when the surface independently needs a compact mark.

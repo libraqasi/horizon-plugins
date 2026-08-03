@@ -142,6 +142,7 @@ class Validation:
         self.disputes_by_transaction: dict[str, list[dict[str, Any]]] = defaultdict(list)
         self.actual_counts: dict[str, int] = defaultdict(int)
         self.payload_digests: dict[str, int] = defaultdict(int)
+        self.expected_currency: str | None = None
 
     def error(self, message: str) -> None:
         if len(self.errors) < 500:
@@ -171,6 +172,11 @@ class Validation:
             date.fromisoformat(self.manifest["scenario_date"])
         except (KeyError, TypeError, ValueError):
             self.error("manifest scenario_date must be an ISO date")
+        configured_currency = self.manifest.get("config", {}).get("dataset", {}).get("currency")
+        if not isinstance(configured_currency, str) or not re.fullmatch(r"[A-Z]{3}", configured_currency):
+            self.error("manifest config dataset.currency must be an uppercase three-letter code")
+        else:
+            self.expected_currency = configured_currency
 
     def validate_file_inventory(self) -> None:
         for sidecar in ("horizon_synthetic.sqlite-wal", "horizon_synthetic.sqlite-shm"):
@@ -249,6 +255,10 @@ class Validation:
                 self.error(f"{location}: {field_path} must be integer minor units")
             if key.endswith("_bps") and (not isinstance(value, int) or isinstance(value, bool)):
                 self.error(f"{location}: {field_path} must be integer basis points")
+            if key == "currency" and self.expected_currency is not None and value != self.expected_currency:
+                self.error(
+                    f"{location}: {field_path} must match configured currency {self.expected_currency}"
+                )
 
     def load_jsonl(self) -> None:
         jsonl_dir = self.root / "jsonl"

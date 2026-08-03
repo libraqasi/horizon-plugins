@@ -45,8 +45,10 @@ Use photography only when it clarifies or humanizes the product story. Add usefu
 
 ## Tokens and starter
 
-- `assets/tokens/horizon-tokens.json` is a portable custom token map.
+- `assets/tokens/horizon-tokens.json` is a machine-readable, web-oriented token reference. Colors and semantic roles transfer directly; spacing, radii, font stacks, hover states, shadows, and motion values use web units or conventions and must be translated for another platform.
 - `assets/starter/horizon-tokens.css` provides semantic tokens, the brand frame, controls, cards, statuses, forms, finance rows, and accessibility adaptations.
 - `assets/starter/horizon-starter-preview.html` is a component gallery and markup starting point, not a product screen.
 
-Copy only what the product needs and keep semantic names in application code.
+The bundled Horizon Sans files are WOFF2 web fonts. Do not imply that native-ready font binaries or licensing are included. For non-web work, use an authorized platform-compatible font source when available or a documented system-font fallback; keep the formal wordmark as the supplied path-based SVG. SVG logos and icons remain canonical source artwork, but native consumers are responsible for an appropriate, geometry-preserving runtime conversion.
+
+Copy only what the product needs and keep semantic names in application code. The CSS, HTML, `<img>`, and `object-fit` treatments in this catalog are web implementation examples rather than universal component requirements.

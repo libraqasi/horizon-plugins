@@ -1,11 +1,13 @@
 ---
 name: generate-horizon-bank-mockups
-description: Create and iterate visual Horizon Bank UI/UX mockups, concept screens, wireframes, responsive screen sets, journey storyboards, and design explorations at low or high fidelity. Use when an agent needs to turn a banking idea, product flow, feature brief, rough sketch, or existing screen into Horizon-aligned prototype images or other visual artifacts before implementation, including with image-generation, image-editing, HTML/SVG rendering, design, or multimodal tools.
+description: Create and iterate visual Horizon Bank web UI/UX mockups, concept screens, wireframes, responsive-web screen sets, journey storyboards, and design explorations at low or high fidelity. Use when an agent needs to turn a banking idea, product flow, feature brief, rough sketch, or existing screen into Horizon-aligned prototype images or other visual artifacts before implementation, including with image-generation, image-editing, HTML/SVG rendering, design, or multimodal tools. Native concepts are exploratory and must follow their target platform's conventions.
 ---
 
 # Generate Horizon Bank Mockups
 
 Create visual artifacts for learning and decision-making before implementation. Ground every result in the bundled Horizon identity, design tokens, patterns, and rendered references.
+
+The bundled task plates, token CSS, starter HTML, and deterministic component examples are web and responsive-web references. They may inform an exploratory native or cross-platform concept, but do not present them as authoritative native navigation, controls, typography, or accessibility patterns. Identify the target platform in the brief and disclose any platform-specific fidelity gaps.
 
 ## Required workflow
 
@@ -88,12 +90,12 @@ Do not present several nearly identical outputs as meaningful alternatives. Vary
 
 ## Bundled resources
 
-- `assets/visual-references/`: rendered identity, foundation, desktop, and mobile grounding images for multimodal tools.
+- `assets/visual-references/`: rendered identity, foundation, desktop-web, and responsive-web mobile grounding images for multimodal tools.
 - `assets/logos/`: formal standalone wordmarks and independent HB icon for exact placement or compositing.
 - `assets/fonts/web/`: Horizon Sans digital font family.
 - `assets/icons/`: reusable banking and utility SVGs.
 - `assets/stock/`: curated editorial photography for relevant product stories.
-- `assets/tokens/horizon-tokens.json`: portable machine-readable design tokens.
+- `assets/tokens/horizon-tokens.json`: machine-readable, web-oriented design-token reference; translate web units and interaction states for other platforms.
 - `assets/starter/horizon-tokens.css`: deterministic web styling and components.
 - `assets/starter/horizon-starter-preview.html`: complete rendered component reference and HTML starting point.
 

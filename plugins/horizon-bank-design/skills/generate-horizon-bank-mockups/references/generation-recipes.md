@@ -17,7 +17,7 @@
 Give the rendering model a complete visual contract in this order:
 
 1. **Artifact**: UI mockup, wireframe, storyboard, responsive comparison, or design board.
-2. **Frame**: device, orientation, dimensions or aspect ratio, and whether the UI is isolated or shown in context.
+2. **Frame**: platform or surface, device, orientation, dimensions or aspect ratio, and whether the UI is isolated or shown in context.
 3. **Primary job**: the one task or decision the screen must make obvious.
 4. **Information architecture**: regions and their relative priority.
 5. **Exact content**: labels, values, dates, states, and synthetic data that must appear.
@@ -36,7 +36,7 @@ Tell the model not to add policy, legal, fee, rate, timing, cancellation, eligib
 | Explore layout quickly | Low-fidelity HTML/SVG wireframe or raster concept |
 | Validate visual direction | High-fidelity raster image with reference plates |
 | Validate exact copy and financial data | HTML/CSS or SVG render |
-| Compare desktop and mobile | Two isolated frames or one clearly separated comparison board |
+| Compare desktop and responsive web | Two isolated frames or one clearly separated comparison board |
 | Explain a journey | Three-to-five frame storyboard with stable shell |
 | Present an idea to stakeholders | Annotated concept board with one primary screen and focused callouts |
 | Iterate an existing screen | Image edit using the current screen plus Horizon references |
@@ -111,9 +111,9 @@ once, correctly, and legibly.
 
 After generation, overlay the exact SVG wordmark or rerender deterministically if the mark, labels, or amounts are wrong.
 
-## Generate a responsive screen set
+## Generate a responsive-web screen set
 
-Create desktop and mobile as separate frames or a clearly separated board. Use a desktop/mobile reference pair.
+Create desktop and responsive-web mobile views as separate frames or a clearly separated board. Use a desktop/mobile reference pair. For native concepts, do not infer platform components from this recipe; name the target platform and apply its conventions while preserving Horizon identity and financial-safety hierarchy.
 
 Keep constant:
 

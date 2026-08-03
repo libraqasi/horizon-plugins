@@ -15,6 +15,7 @@
 - Verify current goal amount does not exceed target unless overfunding is explicit.
 - Verify loan monthly payment from principal, APR, and term.
 - Keep money integral in minor units and rates integral in basis points.
+- Require every generated monetary record to match `config.dataset.currency`.
 
 ## Dates and state
 
@@ -36,6 +37,7 @@
 
 - Compare JSONL counts to the manifest.
 - Compare CSV, Mongo JSONL, SQLite, and bundle payloads—not only row counts—to canonical JSONL.
+- Treat CSV and SQLite as lossless payload adapters; do not infer that they are normalized consumer schemas.
 - Open SQLite exports in immutable read-only mode and reject mutable `-wal` or `-shm` sidecars.
 - Inspect representative joined snapshots, not only raw files.
 - Treat privacy, identity, relationship, date, and arithmetic failures as errors in every mode.

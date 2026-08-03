@@ -1,7 +1,7 @@
 {
   "name": "horizon-bank-design",
-  "version": "1.0.0+codex.20260803132016",
-  "description": "Generate visual mockups and aligned assets, design, build, and audit accessible Horizon Bank digital experiences with reusable identity, tokens, components, photography, iconography, and financial UX guidance.",
+  "version": "1.0.0+codex.20260803140235",
+  "description": "Generate visual mockups and aligned assets, design and build accessible Horizon Bank web experiences, and audit supported web source code with reusable identity, tokens, components, photography, iconography, and financial UX guidance.",
   "author": {
     "name": "Horizon design enablement"
   },
@@ -22,8 +22,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Horizon Bank Design",
-    "shortDescription": "Generate, build, and audit Horizon Bank design.",
-    "longDescription": "Create visual mockups, aligned imagery and icons, and accessible Horizon Bank web and mobile concepts using the HB identity, semantic tokens, reusable financial patterns, editorial photography, and a production SVG icon system.",
+    "shortDescription": "Generate, build, and audit Horizon Bank web experiences.",
+    "longDescription": "Create visual mockups, aligned imagery and icons, and accessible Horizon Bank web and responsive-web experiences using the HB identity, semantic tokens, reusable financial patterns, editorial photography, and a production SVG icon system. The brand and experience guidance can inform other platforms, but native implementation libraries and source audits are not bundled.",
     "developerName": "Horizon design enablement",
     "category": "Design",
     "capabilities": [

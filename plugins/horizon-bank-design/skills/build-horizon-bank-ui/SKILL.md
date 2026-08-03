@@ -1,11 +1,15 @@
 ---
 name: build-horizon-bank-ui
-description: Design, implement, or refactor modern Horizon Bank web interfaces and guide native mobile UI using the standalone Horizon wordmark, optional HB icon, bundled Horizon Sans fonts, semantic tokens, accessible financial patterns, reusable SVG icons, stock photography, and agentic-commerce trust boundaries. Use for Horizon dashboards, customer banking flows, public pages, prototypes, design systems, React/HTML/CSS work, mobile concepts, or requests to create future Horizon Bank elements.
+description: Design, implement, or refactor modern Horizon Bank web and responsive-web interfaces using the standalone Horizon wordmark, optional HB icon, bundled web fonts, semantic tokens, accessible financial patterns, reusable SVG icons, stock photography, and agentic-commerce trust boundaries. Use for Horizon dashboards, customer banking flows, public pages, prototypes, design systems, React/HTML/CSS work, or web-focused requests to create future Horizon Bank elements. The identity and experience principles may inform other platforms, but native implementation libraries and automated native audits are not included.
 ---
 
 # Build Horizon Bank UI
 
 Create a credible bank experience that feels established, calm, and task-focused. Treat Horizon Bank as the product identity in ordinary UI copy.
+
+## Supported implementation scope
+
+This skill is implementation-ready for web and responsive-web experiences. Its identity, content, accessibility outcomes, financial safety, and interaction-state guidance can inform native or cross-platform work, but the bundled fonts, starter code, component recipes, and automated audit are web-specific. For a non-web target, inspect the target platform first, translate the applicable Horizon principles through its native conventions and assets, and disclose that this skill does not provide source-level native validation.
 
 ## Required workflow
 
@@ -17,8 +21,8 @@ Create a credible bank experience that feels established, calm, and task-focused
 6. Read [agentic-commerce-surfaces.md](references/agentic-commerce-surfaces.md) for delegated spending, approval, agent, protocol, or observability work.
 7. Establish semantic tokens before styling components. For web work, start from `assets/starter/horizon-tokens.css` and inspect `assets/starter/horizon-starter-preview.html`.
 8. Build the smallest coherent end-to-end flow, including loading, empty, error, interrupted, and durable success states.
-9. Run `python3 scripts/audit_horizon_ui.py <source-path> --strict`. Review findings and confirm eligible files were scanned.
-10. Inspect the rendered result at representative desktop and mobile sizes. Verify keyboard access, zoom/reflow, contrast, reduced motion, hierarchy, and clipping.
+9. For eligible web source, run `python3 scripts/audit_horizon_ui.py <source-path> --strict`. Review findings and confirm at least one eligible web file was scanned. A zero-file result means no web audit was performed.
+10. Inspect the rendered result at representative desktop and responsive-web sizes. Verify keyboard access, zoom/reflow, contrast, reduced motion, hierarchy, and clipping.
 
 ## Identity rules
 
@@ -52,7 +56,7 @@ Create a credible bank experience that feels established, calm, and task-focused
 - `assets/logos/`: Horizon Bank SVG identity family.
 - `assets/icons/`: reusable 60-file banking and utility SVG library.
 - `assets/stock/`: seven supplied editorial photographs for relevant product storytelling.
-- `assets/tokens/horizon-tokens.json`: portable Horizon token map.
+- `assets/tokens/horizon-tokens.json`: machine-readable, web-oriented Horizon token reference. Preserve semantic roles when translating its CSS units, font stacks, hover states, shadows, or motion values to another platform.
 - `assets/starter/horizon-tokens.css`: web starter with semantic tokens and common components.
 - `assets/starter/horizon-starter-preview.html`: accessible component-gallery markup.
 - `scripts/audit_horizon_ui.py`: palette, identity, and common accessibility preflight.
@@ -61,4 +65,4 @@ Copy only the assets the product needs. Keep source filenames where practical an
 
 ## Completion gate
 
-Deliver only after the primary journey works, the HB identity is correct, responsive structure is intentional, native semantics are used, WCAG 2.2 AA is the target, keyboard and screen-reader names are meaningful, consequential states are durable, protocol/payment boundaries remain truthful, and the rendered UI has been visually reviewed.
+For supported web work, deliver only after the primary journey works, the HB identity is correct, responsive structure is intentional, native HTML semantics are used, WCAG 2.2 AA is the target, keyboard and screen-reader names are meaningful, consequential states are durable, protocol/payment boundaries remain truthful, and the rendered UI has been visually reviewed. For other platforms, report which transferable Horizon principles were applied and which platform-specific implementation or validation remains outside this skill.

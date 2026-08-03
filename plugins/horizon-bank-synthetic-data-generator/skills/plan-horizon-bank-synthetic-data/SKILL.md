@@ -14,7 +14,7 @@ Define the smallest coherent dataset that proves the target experience. Inspect 
 3. Read [archetypes-and-overlays.md](references/archetypes-and-overlays.md) to select customer archetypes and named events without tying financial outcomes to protected traits.
 4. Read the sibling generator’s [canonical model](../generate-horizon-bank-synthetic-data/references/canonical-model.md), [configuration schema](../generate-horizon-bank-synthetic-data/assets/config.schema.json), and [adapter and LLM-context guidance](../generate-horizon-bank-synthetic-data/references/adapters-and-delivery.md). Any runnable config must be valid JSON matching that schema.
 5. Ask unresolved questions one at a time. Cover journey, audience, data contract, integration, time behavior, state, scale, optional LLM use, edge cases, and acceptance queries.
-6. Prefer a canonical Horizon model plus a thin target adapter. Use the target schema directly only when reuse provides no value.
+6. Prefer a canonical Horizon model plus a thin target adapter when it reduces duplication. The canonical model is an optional starting point rather than a required application contract; use the target schema directly when it better fits the experience and the required safety and financial invariants remain testable.
 7. Choose deterministic generation for IDs, dates, money, relationships, balances, rates, and calculations. Allow model-written text only for whitelisted narrative fields.
 8. Produce a decision-complete brief and a generator config. Include:
    - target consumers and exact field mapping;

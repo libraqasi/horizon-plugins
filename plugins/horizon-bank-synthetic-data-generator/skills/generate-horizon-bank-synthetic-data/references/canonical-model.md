@@ -5,9 +5,12 @@
 Use `schema_version`, `dataset.name`, `seed`, `scenario_date`, `time_mode`, `timezone`, `locale`, `currency`, `scale`, `archetypes`, `modules`, `overlays`, `outputs.formats`, and `narrative.mode`.
 
 - `time_mode: fixed` requires an ISO scenario date.
-- `time_mode: rolling` resolves today once, records it, and never changes while serving.
+- `time_mode: rolling` resolves today once in the configured IANA timezone, records it, and never changes while serving.
 - CLI overrides win over config values and are written to `manifest.json`.
 - Money uses integer minor units plus ISO currency. Rates use integer basis points.
+- `currency` is propagated to every generated monetary record. `locale` is recorded as scenario metadata for consumer adapters; it does not localize names, narrative, addresses, or display formatting.
+
+The canonical collections are a reusable source model, not a mandatory consumer contract. Projects may select, project, rename, or adapt fields for their own schemas while preserving stable IDs, relationships, units, dates, synthetic markers, and validated financial invariants.
 
 ## Core collections
 

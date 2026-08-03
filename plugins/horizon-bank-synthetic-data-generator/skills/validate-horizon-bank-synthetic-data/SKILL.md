@@ -39,6 +39,7 @@ Require all of the following:
 - posted transactions reconcile account balances;
 - card limits, available credit, utilization, budgets, goals, and loan payments agree;
 - dates fit the declared history window and scenario date;
+- every generated monetary record uses the configured dataset currency;
 - flat files, SQLite, and Mongo exports contain the same canonical records;
 - all records are explicitly synthetic and use safe identifiers;
 - no credentials, SSNs, valid card numbers, routing numbers, full account numbers, or unsafe contact details exist;

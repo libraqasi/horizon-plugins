@@ -1,6 +1,6 @@
 {
   "name": "horizon-bank-synthetic-data-generator",
-  "version": "1.0.0+codex.20260727200151",
+  "version": "1.0.0+codex.20260803140235",
   "description": "Plan, generate, serve, adapt, and validate coherent synthetic customer and banking data for Horizon Bank prototypes.",
   "author": {
     "name": "Horizon developer enablement"

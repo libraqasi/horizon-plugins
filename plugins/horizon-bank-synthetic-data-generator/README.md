@@ -22,7 +22,7 @@ python3 "$VALIDATOR_SKILL/scripts/validate_horizon_data.py" \
   /tmp/horizon-synthetic-data --strict --reproducibility-check
 ```
 
-The generated manifest records the resolved seed, scenario date, configuration, collection counts, and SHA-256 hashes. Canonical JSONL is always emitted; configs may also request a human-reviewable JSON bundle, CSV, SQLite, and MongoDB import JSONL.
+The generated manifest records the resolved seed, scenario date, configuration, collection counts, and SHA-256 hashes. Canonical JSONL is always emitted; configs may also request a human-reviewable JSON bundle, lossless CSV payload wrappers, an indexed read-only SQLite JSON payload store, and MongoDB import JSONL. These are portable starting points, not mandatory application schemas; consuming projects may map them into their own types, projections, databases, or APIs.
 
 Start the local read-only fixture API with:
 

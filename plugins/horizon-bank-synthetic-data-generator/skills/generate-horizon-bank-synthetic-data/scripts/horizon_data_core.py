@@ -14,6 +14,7 @@ from collections import defaultdict
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Iterable
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 SCHEMA_VERSION = "1.0.0"
 ARCHETYPES = [
@@ -224,7 +225,23 @@ def validate_input_config(raw: dict[str, Any]) -> None:
         raise ValueError("narrative.mode must be none, template, or slots")
 
 
-def resolve_config(raw: dict[str, Any], overrides: dict[str, Any] | None = None) -> dict[str, Any]:
+def _rolling_scenario_date(timezone_name: str, now_utc: datetime | None = None) -> date:
+    reference = now_utc or datetime.now(timezone.utc)
+    if reference.tzinfo is None:
+        reference = reference.replace(tzinfo=timezone.utc)
+    try:
+        target_timezone = ZoneInfo(timezone_name)
+    except ZoneInfoNotFoundError as exc:
+        raise ValueError(f"dataset.timezone is not available: {timezone_name}") from exc
+    return reference.astimezone(target_timezone).date()
+
+
+def resolve_config(
+    raw: dict[str, Any],
+    overrides: dict[str, Any] | None = None,
+    *,
+    now_utc: datetime | None = None,
+) -> dict[str, Any]:
     validate_input_config(raw)
     config = json.loads(json.dumps(raw))
     if config.get("schema_version") != SCHEMA_VERSION:
@@ -266,7 +283,7 @@ def resolve_config(raw: dict[str, Any], overrides: dict[str, Any] | None = None)
         raise ValueError("min_transactions cannot exceed max_transactions")
 
     if dataset.get("time_mode", "fixed") == "rolling":
-        dataset["scenario_date"] = date.today().isoformat()
+        dataset["scenario_date"] = _rolling_scenario_date(dataset["timezone"], now_utc).isoformat()
     scenario_date = date.fromisoformat(dataset.get("scenario_date", "2026-07-27"))
     dataset["resolved_scenario_date"] = scenario_date.isoformat()
     dataset.setdefault("seed", 4242)
@@ -417,6 +434,7 @@ def _make_transactions(
     scenario: date,
     history_days: int,
     count: int,
+    currency: str,
     merchant_records: list[dict[str, Any]],
     overlays: list[str],
     rng: random.Random,
@@ -455,7 +473,7 @@ def _make_transactions(
                 "category": category,
                 "direction": direction,
                 "amount_minor": amount,
-                "currency": "USD",
+                "currency": currency,
                 "status": status,
                 "synthetic": True,
             }
@@ -493,6 +511,7 @@ def generate(
     formats = set(config["outputs"]["formats"])
     modules = set(config["modules"])
     seed = int(dataset["seed"])
+    currency = dataset["currency"]
     scenario = date.fromisoformat(dataset["resolved_scenario_date"])
     customers_count = int(scale["customers"])
     history_days = int(scale["history_days"])
@@ -613,7 +632,7 @@ def generate(
                     "industry": "professional_services",
                     "employee_count": 4 + customer_index % 8,
                     "annual_revenue_minor": rng.randint(18_000_000, 75_000_000),
-                    "currency": "USD",
+                    "currency": currency,
                     "synthetic": True,
                 },
             )
@@ -631,6 +650,7 @@ def generate(
                 scenario,
                 history_days,
                 _transaction_count(scale, rng),
+                currency,
                 merchant_records,
                 customer_overlays,
                 rng,
@@ -659,7 +679,7 @@ def generate(
                 "opening_balance_minor": opening,
                 "posted_balance_minor": desired,
                 "available_balance_minor": desired + (pending_debits if account_index == 0 else 0),
-                "currency": "USD",
+                "currency": currency,
                 "status": "open",
                 "synthetic": True,
             }
@@ -685,7 +705,7 @@ def generate(
                     "current_balance_minor": current_balance,
                     "available_credit_minor": limit_minor - current_balance,
                     "utilization_bps": round(current_balance / limit_minor * 10_000),
-                    "currency": "USD",
+                    "currency": currency,
                     "status": "active",
                     "synthetic": True,
                 },
@@ -709,7 +729,7 @@ def generate(
                         ),
                         "cadence": "biweekly" if income_index == 0 else "variable",
                         "typical_amount_minor": rng.randint(65_000, 220_000),
-                        "currency": "USD",
+                        "currency": currency,
                         "synthetic": True,
                     },
                 )
@@ -730,7 +750,7 @@ def generate(
                     "remaining_months": months,
                     "scheduled_payment_minor": _payment_minor(principal, rate_bps, months),
                     "next_payment_date": iso_day(scenario + timedelta(days=14)),
-                    "currency": "USD",
+                    "currency": currency,
                     "status": "late" if "missed-payment" in customer_overlays else "current",
                     "synthetic": True,
                 },
@@ -747,7 +767,7 @@ def generate(
                     "portfolio_name": "Horizon Balanced Growth" if archetype == "affluent-investor" else "Horizon Retirement Income",
                     "market_value_minor": market_value,
                     "cost_basis_minor": round(market_value * 0.82),
-                    "currency": "USD",
+                    "currency": currency,
                     "as_of_date": iso_day(scenario),
                     "synthetic": True,
                 },
@@ -774,7 +794,7 @@ def generate(
                         "period_end": iso_day(scenario),
                         "limit_minor": max(25_000, actual + 10_000),
                         "actual_minor": actual,
-                        "currency": "USD",
+                        "currency": currency,
                         "synthetic": True,
                     },
                 )
@@ -790,7 +810,7 @@ def generate(
                     "target_minor": target,
                     "current_minor": min(target, max(0, desired_primary)),
                     "target_date": iso_day(scenario + timedelta(days=365)),
-                    "currency": "USD",
+                    "currency": currency,
                     "synthetic": True,
                 },
             )
@@ -886,7 +906,7 @@ def generate(
                     "transaction_id": disputed["id"],
                     "opened_date": iso_day(scenario),
                     "amount_minor": -disputed["amount_minor"],
-                    "currency": "USD",
+                    "currency": currency,
                     "status": "under_review",
                     "synthetic": True,
                 },

@@ -4,12 +4,12 @@
 
 - Use the JSON bundle for human-reviewable or single-customer prototypes.
 - Use per-collection JSONL for streaming, Mongo import, or model pipelines.
-- Use CSV for analysts and simple test imports; nested values are JSON-encoded strings.
+- Use CSV when a lossless row wrapper is convenient for review or simple imports. Each row keeps indexed identifiers plus the complete canonical record in `payload_json`; it is not a normalized analyst table.
 - Preserve canonical IDs, minor units, basis points, and ISO dates in source exports.
 
 ## SQLite and MongoDB
 
-- Use generated SQLite for relational fixtures and the bundled read-only REST server.
+- Use generated SQLite as an indexed read-only JSON payload store and for the bundled fixture server. It is not a normalized application database or ORM schema.
 - Query the `payload` JSON only after filtering by indexed `id`, `customer_id`, or `account_id`.
 - Use `mongo/*.jsonl` and the generated import instructions for MongoDB.
 - Add project-specific indexes and mutation routes in the consumer, not in the plugin.
@@ -21,6 +21,8 @@
 - Convert basis points to percentages only at the boundary.
 - Keep adapter functions pure where possible and test them with stable entity IDs.
 - Never hand-copy aggregate values into a second fixture.
+
+These mappings are guidance, not a required application architecture. Consumers may use their own language-native models, schema validators, OpenAPI descriptions, databases, APIs, or offline projections. Keep the adapter thin enough that canonical IDs, units, dates, relationships, and synthetic-data boundaries remain traceable and testable.
 
 ## REST fixtures
 

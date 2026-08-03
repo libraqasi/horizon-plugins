@@ -7,6 +7,8 @@ description: Generate reproducible synthetic Horizon Bank personas, households, 
 
 Generate one canonical, seeded source of truth and adapt it to the prototype rather than maintaining unrelated hand-written fixtures.
 
+The bundled canonical model, exports, REST fixture, and adapter examples are optional starting points. A consuming project may use its own schema, projection, database, API, or language-native types as long as stable relationships, minor-unit money, basis-point rates, scenario dates, synthetic-data safety, deterministic calculations, and reproducibility remain explicit and testable.
+
 ## Required workflow
 
 1. Require a decision-complete plan or inspect the project and use `$plan-horizon-bank-synthetic-data`.
@@ -42,9 +44,9 @@ python3 "$GENERATOR_SKILL_DIR/../validate-horizon-bank-synthetic-data/scripts/va
 
 - `scripts/generate_horizon_data.py`: create fixed or rolling seeded data and portable exports.
 - `scripts/validate_horizon_config.py`: enforce and resolve the bundled config contract without writing data.
-- `scripts/serve_horizon_data.py`: serve a generated SQLite dataset through a read-only local REST API.
+- `scripts/serve_horizon_data.py`: serve the indexed SQLite JSON payload store through a read-only local REST API.
 - `assets/configs/`: nine customer archetypes plus an all-archetype small dataset.
-- `assets/config.schema.json`: machine-readable configuration contract.
+- `assets/config.schema.json`: machine-readable generator configuration contract; it does not prescribe a consumer application's schema.
 - `references/`: canonical fields, adapter patterns, and controlled narrative enrichment.
 
 ## Non-negotiable boundaries

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit frontend source for Horizon palette drift and common UI hazards."""
+"""Audit supported web source for Horizon palette drift and common UI hazards."""
 
 from __future__ import annotations
 
@@ -212,7 +212,7 @@ def parse_allow(values: list[str]) -> set[str]:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Audit frontend files for Horizon palette drift, identity errors, and accessibility hazards."
+        description="Audit supported web files for Horizon palette drift, identity errors, and accessibility hazards."
     )
     parser.add_argument("targets", nargs="*", type=Path, help="Source files or directories to scan.")
     parser.add_argument(
@@ -274,10 +274,15 @@ def main() -> int:
 
     if args.json:
         print(json.dumps({
+            "scope": "web_source",
+            "audited": bool(files),
             "files_scanned": len(files),
+            "message": None if files else "No eligible web source files were found; no web audit was performed.",
             "findings": [asdict(item) for item in findings],
         }, indent=2))
     else:
+        if not files:
+            print("No eligible web source files were found; no web audit was performed.")
         for item in findings:
             print(
                 f"{item.path}:{item.line}: {item.severity.upper()} "

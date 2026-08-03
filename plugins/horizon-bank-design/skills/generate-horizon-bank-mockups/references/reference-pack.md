@@ -19,16 +19,16 @@ For every high-fidelity image generation, provide `identity.png` and `foundation
 | Visual reference | Attach for |
 |---|---|
 | `account-overview-desktop.png` | Account dashboard, overview, balance, or quick actions |
-| `account-overview-mobile.png` | Mobile account overview or responsive balance hierarchy |
+| `account-overview-mobile.png` | Responsive-web account overview or narrow-screen balance hierarchy |
 | `transfer-review-desktop.png` | Transfer, bill pay, or consequential review at desktop size |
-| `transfer-review-mobile.png` | Mobile transfer or payment review |
+| `transfer-review-mobile.png` | Responsive-web transfer or payment review |
 | `agent-approval-desktop.png` | Delegated spending, merchant approval, agentic commerce, or authorization limits |
-| `agent-approval-mobile.png` | Mobile delegated-spending approval |
+| `agent-approval-mobile.png` | Responsive-web delegated-spending approval |
 | `data-visualization-desktop.png` | Cash flow, spending analysis, category comparison, or forecast |
 | `operational-states-desktop.png` | Loading, empty, interruption, and durable success concepts |
 | `imagery.png` | Marketing, editorial, planning, goal, or life-event concepts using photography |
 
-Use the desktop and mobile pair when a responsive relationship is the question. Otherwise select only the target device plate.
+Use the desktop and mobile pair when a responsive-web relationship is the question. Otherwise select only the target device plate. These mobile plates are not iOS or Android component specifications. For an exploratory native concept, retain the Horizon identity and financial-safety hierarchy while following the named platform's navigation, controls, typography, and accessibility conventions.
 
 ## Exact identity assets
 
@@ -67,6 +67,6 @@ The rendered plates are examples, not immutable page templates. Reuse their visu
 
 - For multimodal image tools, attach the relevant PNG plates and exact SVG mark if supported.
 - For text-only image tools, translate the plates into the prompt recipe from `generation-recipes.md`.
-- For code-capable agents, render from the token CSS, font files, SVG assets, and starter HTML.
+- For web code-capable agents, render from the token CSS, web font files, SVG assets, and starter HTML.
 - For design tools, import the SVG marks and token values directly, then use the plates as a visual calibration layer.
 - For agents with no visual output, deliver the completed generation brief, exact copy deck, screen inventory, and ready-to-run prompt.
