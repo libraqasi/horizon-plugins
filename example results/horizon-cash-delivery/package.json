@@ -1,0 +1,23 @@
+{
+  "name": "horizon-cash-delivery",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "data:config": "python3 ../../plugins/horizon-bank-synthetic-data-generator/skills/generate-horizon-bank-synthetic-data/scripts/validate_horizon_config.py synthetic-data/config.json",
+    "data:generate": "python3 ../../plugins/horizon-bank-synthetic-data-generator/skills/generate-horizon-bank-synthetic-data/scripts/generate_horizon_data.py --config synthetic-data/config.json --out synthetic-data/canonical --force",
+    "data:adapt": "node scripts/build-cash-delivery-fixture.mjs",
+    "data:validate": "python3 ../../plugins/horizon-bank-synthetic-data-generator/skills/validate-horizon-bank-synthetic-data/scripts/validate_horizon_data.py synthetic-data/canonical --strict --reproducibility-check",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {}
+}

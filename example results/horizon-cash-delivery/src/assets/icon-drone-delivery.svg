@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 128" role="img" aria-labelledby="title">
+  <title id="title">Drone delivery</title>
+  <g fill="none" stroke="#171617" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 27h50M124 27h50M43 27v17M149 27v17" stroke-width="5"/>
+    <path d="M81 59C72 68 67 77 67 88M111 59c9 9 14 18 14 29" stroke-width="5"/>
+    <path d="M96 62v14" stroke-width="4.5"/>
+    <path d="M79 77h34v32H79zM79 77l17 10 17-10M96 87v22" stroke-width="4.5"/>
+  </g>
+  <path d="M40 40h34l11-10h22l11 10h34l-3 11h-32l-11 15H86L75 51H43l-3-11Z" fill="#171617"/>
+</svg>

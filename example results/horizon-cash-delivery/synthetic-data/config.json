@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "dataset": {
+    "name": "horizon-cash-delivery-single-user",
+    "seed": 4821,
+    "scenario_date": "2026-08-05",
+    "time_mode": "fixed",
+    "timezone": "America/New_York",
+    "locale": "en-US",
+    "currency": "USD"
+  },
+  "scale": {
+    "preset": "custom",
+    "customers": 1,
+    "history_days": 30,
+    "min_transactions": 0,
+    "max_transactions": 0
+  },
+  "archetypes": {
+    "include": ["everyday-banking"]
+  },
+  "modules": ["accounts"],
+  "overlays": [],
+  "outputs": {
+    "formats": ["bundle-json"]
+  },
+  "narrative": {
+    "mode": "none"
+  }
+}

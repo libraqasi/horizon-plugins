@@ -1,0 +1,154 @@
+{
+  "config": {
+    "archetypes": {
+      "include": [
+        "everyday-banking"
+      ]
+    },
+    "dataset": {
+      "currency": "USD",
+      "institution": "Horizon Bank",
+      "locale": "en-US",
+      "name": "horizon-cash-delivery-single-user",
+      "resolved_scenario_date": "2026-08-05",
+      "scenario_date": "2026-08-05",
+      "seed": 4821,
+      "synthetic": true,
+      "time_mode": "fixed",
+      "timezone": "America/New_York"
+    },
+    "modules": [
+      "accounts"
+    ],
+    "narrative": {
+      "mode": "none"
+    },
+    "outputs": {
+      "formats": [
+        "bundle-json"
+      ]
+    },
+    "overlays": [],
+    "scale": {
+      "customers": 1,
+      "history_days": 30,
+      "max_transactions": 0,
+      "min_transactions": 0,
+      "preset": "custom"
+    },
+    "schema_version": "1.0.0"
+  },
+  "counts": {
+    "accounts": 2,
+    "alerts": 0,
+    "budgets": 0,
+    "businesses": 0,
+    "cards": 0,
+    "customers": 1,
+    "delegations": 0,
+    "devices": 0,
+    "disputes": 0,
+    "events": 0,
+    "goals": 0,
+    "households": 0,
+    "incomes": 0,
+    "investments": 0,
+    "loans": 0,
+    "merchants": 0,
+    "rewards": 0,
+    "service_interactions": 0,
+    "transactions": 0
+  },
+  "dataset_id": "data_7d61610d418ad7dc2fac",
+  "dataset_name": "horizon-cash-delivery-single-user",
+  "files": {
+    "bundle.json": {
+      "bytes": 1679,
+      "sha256": "defa400dbc13d6daf47b8c83cb39fda14110abb69b1f0816ba5ff40225739a6a"
+    },
+    "jsonl/accounts.jsonl": {
+      "bytes": 692,
+      "sha256": "533fdd8b4da32d7939c824a6fd6217045e02c1cbf1a7ff482bd3bcaed8954e24"
+    },
+    "jsonl/alerts.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/budgets.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/businesses.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/cards.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/customers.jsonl": {
+      "bytes": 458,
+      "sha256": "195cdd7cd7ebb36ec83cd44fb7ad69b21c1b1983c23c434ab6c411f9e8fd414b"
+    },
+    "jsonl/delegations.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/devices.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/disputes.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/events.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/goals.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/households.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/incomes.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/investments.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/loans.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/merchants.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/rewards.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/service_interactions.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "jsonl/transactions.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "institution": "Horizon Bank",
+  "narrative": {
+    "mode": "none",
+    "override_count": 0
+  },
+  "scenario_date": "2026-08-05",
+  "schema_version": "1.0.0",
+  "synthetic": true
+}
